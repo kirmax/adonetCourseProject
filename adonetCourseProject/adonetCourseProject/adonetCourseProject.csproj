@@ -64,9 +64,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Customer.cs" />
+    <Compile Include="DatabaseContext.cs" />
+    <Compile Include="DBInitializer.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Position.cs" />
+    <Compile Include="Purchase.cs" />
     <Compile Include="Shipment.cs" />
+    <Compile Include="Supplier.cs" />
     <Compile Include="Warehouse.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

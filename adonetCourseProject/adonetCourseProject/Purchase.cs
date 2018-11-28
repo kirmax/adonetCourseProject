@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace adonetCourseProject
 {
-    //доделать
-    class Shipment
+    class Purchase
     {
         public int Id { get; set; }
-        public decimal Price { get; set; }
-        public DateTime ShipmentDate { get; set; }
         public int Quantity { get; set; }
-        public string DeliveryCompany { get; set; }
+        public DateTime datePurchased { get; set; }
+        public DateTime dateShiped { get; set; }
+        public Supplier SupplierId { get; set; }
         public Product ProductId { get; set; }
-        public Customer CustomerId { get; set; }
-
     }
 }
