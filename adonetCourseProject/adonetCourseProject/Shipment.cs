@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace adonetCourseProject
 {
-    //доделать
     class Shipment
     {
         public int Id { get; set; }

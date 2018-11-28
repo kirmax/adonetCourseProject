@@ -9,6 +9,9 @@ namespace adonetCourseProject
 {
     class DBInitializer : DropCreateDatabaseAlways<DatabaseContext>
     {
-
+        protected override void Seed(DatabaseContext context)
+        {
+            context.Accounts.Add(new Account { Login = "admin", Password = "admin" });
+        }
     }
 }

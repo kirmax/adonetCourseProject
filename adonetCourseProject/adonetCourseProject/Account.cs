@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace adonetCourseProject
 {
-    class Account
+    public class Account
     {
         public int Id { get; set; }
         public string Login { get; set; }

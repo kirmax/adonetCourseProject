@@ -17,5 +17,6 @@ namespace adonetCourseProject
         {
 
         }
+        public DbSet<Account> Accounts { get; set; };
     }
 }
