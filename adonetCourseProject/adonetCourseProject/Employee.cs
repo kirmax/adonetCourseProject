@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace adonetCourseProject
 {
-    class Employee
+    public class Employee
     {
         public int Id { get; set; }
-        public int MyProperty { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set;}
@@ -20,7 +19,13 @@ namespace adonetCourseProject
         public Byte[] Photo { get; set; }
         public decimal Salary { get; set; }
         public decimal Reward { get; set; }
-        public Position PositionId { get; set; }
+
+        public int AccountId { get; set; }
+        public Account Account { get; set; }
+
+        public int PositionId { get; set; }
+        public Position Position { get; set; }
+
     }
 
 }
