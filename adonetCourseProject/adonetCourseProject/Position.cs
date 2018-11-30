@@ -13,6 +13,5 @@ namespace adonetCourseProject
         public string Description { get; set; }
         public bool Avaibility { get; set; }
 
-        public Employee Employee { get; set; }
     }
 }

@@ -29,6 +29,11 @@ namespace adonetCourseProject
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            using (DatabaseContext ctx = new DatabaseContext())
+            {
+                
+                
+            }
 
         }
 

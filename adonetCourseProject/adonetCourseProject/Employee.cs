@@ -20,10 +20,8 @@ namespace adonetCourseProject
         public decimal Salary { get; set; }
         public decimal Reward { get; set; }
 
-        public int AccountId { get; set; }
         public Account Account { get; set; }
 
-        public int PositionId { get; set; }
         public Position Position { get; set; }
 
     }

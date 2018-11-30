@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace adonetCourseProject
 {
-    class Warehouse
+    public class Warehouse
     {
         public int Id { get; set; }
         public decimal Quantity { get; set; }
-        public Product ProductId { get; set; }
+        public Product Product { get; set; }
     }
 }

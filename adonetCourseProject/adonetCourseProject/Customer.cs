@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace adonetCourseProject
 {
-    class Customer
+    public class Customer
     {
         public int Id { get; set; }
         public string CompanyName { get; set; }
@@ -15,6 +15,7 @@ namespace adonetCourseProject
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Description { get; set; }
+
     }
 }
 
