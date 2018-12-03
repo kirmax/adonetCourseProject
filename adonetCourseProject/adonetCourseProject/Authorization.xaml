@@ -15,6 +15,6 @@
             <TextBlock Text="Password" FontSize="36" Margin="40,0"/>
             <PasswordBox Name="pbPassword" Width="270" Height="40"  Margin="-10,5" FontSize="22"/>
         </StackPanel>
-        <Button Name="btnLogin" Content="Login" Margin="130,65,130,20" Click="btnLogin_Click" Height="50" Width="190" FontSize="26"/>
+        <Button Name="btnLogin" Content="Login" Margin="130,60,130,20" Click="btnLogin_Click" Height="50" Width="190" FontSize="26"/>
     </StackPanel>
 </Window>

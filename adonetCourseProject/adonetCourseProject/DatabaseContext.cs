@@ -11,7 +11,7 @@ namespace adonetCourseProject
     {
         static DatabaseContext()
         {
-            Database.SetInitializer(new DBInitializer());
+           Database.SetInitializer(new DBInitializer());
         }
         public DatabaseContext() : base("Connection")
         {
