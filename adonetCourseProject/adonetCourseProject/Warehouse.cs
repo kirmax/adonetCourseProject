@@ -10,6 +10,6 @@ namespace adonetCourseProject
     {
         public int Id { get; set; }
         public decimal Quantity { get; set; }
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

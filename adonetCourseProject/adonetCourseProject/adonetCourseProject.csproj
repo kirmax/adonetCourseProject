@@ -71,6 +71,7 @@
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="DBInitializer.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="MD5Hash.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Purchase.cs" />
     <Compile Include="Shipment.cs" />

@@ -14,9 +14,9 @@ namespace adonetCourseProject
         public int Quantity { get; set; }
         public string DeliveryCompany { get; set; }
 
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
     }
 }

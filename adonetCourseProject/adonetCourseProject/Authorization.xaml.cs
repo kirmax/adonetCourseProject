@@ -35,12 +35,18 @@ namespace adonetCourseProject
                 return;
             }
 
+            
+
             using (DatabaseContext ctx = new DatabaseContext())
             {
-                if (ctx.Accounts.Where(a => a.Login == tbLogin.Text && a.Password == pbPassword.Password).Count() > 0)
+
+                string pswdHashed = MD5Hash.GetMD5Hash(pbPassword.Password);
+
+                if (ctx.Accounts.Where(a => a.Login == tbLogin.Text && a.Password == pswdHashed).Count() > 0)
                 {
-                    Account account = ctx.Accounts.Where(a => a.Login == tbLogin.Text && a.Password == pbPassword.Password).First();
+                    Account account = ctx.Accounts.Where(a => a.Login == tbLogin.Text && a.Password == pswdHashed).First();
                     Employee employee = ctx.Employees.Where(em => em.Account.Id == account.Id).First();
+
                     MainWindow mw = new MainWindow(employee);
                     mw.Show();
 
@@ -50,7 +56,7 @@ namespace adonetCourseProject
                 {
                     MessageBox.Show("Error", "User not found");
                 }
-
+                
             }
 
         }

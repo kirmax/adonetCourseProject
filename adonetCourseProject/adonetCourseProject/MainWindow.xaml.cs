@@ -20,9 +20,28 @@ namespace adonetCourseProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow( Employee employee)
+        public MainWindow(Employee employee)
         {
             InitializeComponent();
+            EmployeePositionAccess(employee.Position.Name);
+            ;
+        }
+
+        public void EmployeePositionAccess(string position)
+        {
+            switch (position)
+            {
+                case "Admin":
+                    break;
+                case "CEO":
+                    break;
+                case "Secretary":
+                    break;
+                default:
+                    break;
+            }
         }
     }
+
+
 }

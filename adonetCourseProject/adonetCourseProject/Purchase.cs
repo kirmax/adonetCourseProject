@@ -14,8 +14,8 @@ namespace adonetCourseProject
         public DateTime dateShiped { get; set; }
 
 
-        public Supplier Supplier { get; set; }
+        public virtual Supplier Supplier { get; set; }
 
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
     }
 }
