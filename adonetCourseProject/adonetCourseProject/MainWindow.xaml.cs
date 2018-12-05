@@ -24,18 +24,23 @@ namespace adonetCourseProject
         {
             InitializeComponent();
             EmployeePositionAccess(employee.Position.Name);
-            ;
+            using (DatabaseContext ctx = new DatabaseContext())
+            {
+              //  lvEmployee.ItemsSource = ctx.Employees.ToList().Where(em => em.Account == null).ToList(); not working
+            }
         }
 
         public void EmployeePositionAccess(string position)
         {
             switch (position)
             {
-                case "Admin":
-                    break;
+               /* case "Admin":
+                    break;*/
                 case "CEO":
                     break;
                 case "Secretary":
+                    break;
+                case "HR":
                     break;
                 default:
                     break;

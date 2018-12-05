@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:adonetCourseProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="1000">
+    <StackPanel>
+        <ListView Name="lvEmployee" ItemsSource="{Binding Employees}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Photo}" Width="100"> Фото </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Width="100">Имя</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding MiddleName}" Width="100">Отчество</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}" Width="100">Фамилия</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Address}" Width="100">Адрес</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="100">Телефон</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Birthdate}" Width="100">Дата рождения</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Email}" Width="100">Почта</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Salary}" Width="100">Зарплата</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Reward}" Width="100">Премия</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Position.Name}" Width="100">Должность</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
 </Window>
