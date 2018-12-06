@@ -16,7 +16,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding LastName}" Width="100">Фамилия</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Address}" Width="100">Адрес</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="100">Телефон</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Birthdate}" Width="100">Дата рождения</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Birthdate.Date}" Width="100">Дата рождения</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Email}" Width="100">Почта</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Salary}" Width="100">Зарплата</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Reward}" Width="100">Премия</GridViewColumn>
