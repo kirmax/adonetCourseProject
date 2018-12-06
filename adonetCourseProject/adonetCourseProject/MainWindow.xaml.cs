@@ -26,7 +26,9 @@ namespace adonetCourseProject
         {
             
             InitializeComponent();
+
             
+
             using (DatabaseContext ctx = new DatabaseContext())
             {
                 var employees = ctx.Employees.Include(e => e.Position).ToList();
@@ -35,6 +37,8 @@ namespace adonetCourseProject
                 
                 
             }
+
+            lblEmployeeCount.Content = lvEmployee.Items.Count;
         }
 
         public void EmployeePositionAccess(string position)
@@ -52,6 +56,11 @@ namespace adonetCourseProject
                 default:
                     break;
             }
+        }
+
+        private void lvEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lblEmployeeCount.Content = lvEmployee.Items.Count;
         }
     }
 

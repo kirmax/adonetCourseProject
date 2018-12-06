@@ -29,6 +29,7 @@
 
 
                 <Button Name="btnLogin" Content="Log In"  Click="btnLogin_Click" Height="40" Width="170" FontSize="24" BorderBrush="#FFDDDDDD" Margin="0,40,0,0"/>
+                
 
 
 
@@ -37,4 +38,5 @@
         </Border>
         
     </Grid>
+    
 </Window>
