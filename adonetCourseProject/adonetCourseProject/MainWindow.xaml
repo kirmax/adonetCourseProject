@@ -5,18 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:adonetCourseProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="700">
     <StackPanel>
-        <ListView Name="lvEmployee" ItemsSource="{Binding Employees}" Width="600" HorizontalAlignment="Left" Height="383" SelectionChanged="lvEmployee_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Width="150">Имя</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding LastName}" Width="150">Фамилия</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="150">Телефон</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Position.Name}" Width="150">Должность</GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <StackPanel Orientation="Horizontal">
+            <ListView Name="lvEmployee" ItemsSource="{Binding Employees}" Width="600" HorizontalAlignment="Left" Height="383" SelectionChanged="lvEmployee_SelectionChanged" MouseDoubleClick="lvEmployee_MouseDoubleClick">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Width="150">Имя</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding LastName}" Width="150">Фамилия</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="150">Телефон</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Position.Name}" Width="150">Должность</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel>
+                <Button Name="btnAddEmployee" Background="White" Margin="0,10" Width="92" Height="90" Click="btnAddEmployee_Click">
+                    <Image Source="https://t6.rbxcdn.com/378e3269dae3409d5f562d72b6715aa0" Width="60" Margin="15,20"/>
+                </Button>
+                <Button Name="btnEditEmployee" Background="White" Margin="0,40" Width="92" Height="90" Click="btnEditEmployee_Click">
+                    <Image Source="https://image.freepik.com/darmowe-ikony/interfejs-edycji-symbolem-o%C5%82owkiem-na-papierze-kwadratowy-zarys_318-61160.jpg" Width="40" Margin="0,20"/>
+                </Button>
+                <Button Name="btnDeleteEmployee" Background="White" Width="92" Height="90" Click="btnDeleteEmployee_Click">
+                    <Image Source="https://img.freepik.com/free-icon/delete-cross_318-79863.jpg" Width="40" Margin="15,20"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
         <StackPanel VerticalAlignment="Bottom">
             <StatusBar>
                 <StatusBarItem>

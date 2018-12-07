@@ -62,6 +62,26 @@ namespace adonetCourseProject
         {
             lblEmployeeCount.Content = lvEmployee.Items.Count;
         }
+
+        private void btnAddEmployee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEditEmployee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDeleteEmployee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lvEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 
 

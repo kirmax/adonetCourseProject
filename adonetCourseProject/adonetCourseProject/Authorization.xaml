@@ -5,38 +5,159 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:adonetCourseProject"
         mc:Ignorable="d"
-        Title="Authorization" Height="350" Width="500" Background="#FF00B2FF" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Authorization" Height="400" Width="600" Background="#FF016E9D" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Window.Resources>
-        
-        
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FFFEAB1A"/>
+            <Setter Property="Foreground" Value="White"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="2">
+                            <Border Background="{TemplateBinding Background}"
+                            CornerRadius="18"
+                            Width="170"
+                            Padding="8,3"
+                            Margin="3">
+
+                                <DockPanel Name="myContentPresenterDockPanel">
+                                    <TextBlock 
+                                    FontFamily="{TemplateBinding FontFamily}"
+                                    Text="{TemplateBinding  Content}"
+                                    TextBlock.Foreground="{TemplateBinding Foreground}" 
+                                    Focusable="False"/>
+                                </DockPanel>
+
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="#FF00B2FF" Duration="0:0:0.3" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="#FF004462" Duration="0:0:0.3" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+
+            <Setter Property="Template">
+
+                <Setter.Value >
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Grid>
+                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" BorderBrush="#FF0700DB"/>
+                            </Border>
+                            <TextBlock IsHitTestVisible="False" 
+                                       Text="{TemplateBinding Tag}"
+                                       FontSize="22" FontWeight="ExtraLight">
+
+
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text,RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+
+                                </TextBlock.Style>
+
+
+                            </TextBlock>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+
+            <Setter Property="Template">
+
+                <Setter.Value >
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Grid>
+                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" BorderBrush="#FF0700DB"/>
+                            </Border>
+                            <TextBlock IsHitTestVisible="False" 
+                                       Text="{TemplateBinding Tag}"
+                                       FontSize="22" FontWeight="ExtraLight">
+
+
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text,RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+
+                                </TextBlock.Style>
+
+
+                            </TextBlock>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
+
+
     </Window.Resources>
     <Grid>
-        
 
-            <Border Background="White"
-                CornerRadius="20"
+
+        <Border Background="White"
+                CornerRadius="10"
                 Padding="15,30,15,15"
                 Width="340"
-                Margin="10,10,10,10">
+                Margin="10,30,10,30">
+            <Border.Effect>
+                <DropShadowEffect Color="#FF5B5A5A" Direction="280"/>
+            </Border.Effect>
             <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    TextBlock.TextAlignment="Center" >
-                <TextBlock Text="login"  FontSize="20" FontStyle="Italic" />
-                <TextBox Name="tbLogin" Width="270" Height="40" FontSize="22"/>
-                <TextBlock Text="password" FontSize="20" Margin="40,0" FontStyle="Italic"/>
-                <PasswordBox Name="pbPassword" Width="270" Height="40"  FontSize="22"/>
+                    TextBlock.TextAlignment="Center"
+                    Margin="10 2 10 15">
+                <TextBlock Text="Пожалуйста авторизуйтесь" FontSize="18" FontStyle="Italic" Foreground="#FF0700DB" FontWeight="Thin" Margin="10 20 10 15 "/>
+                <TextBox Tag="Логин" Name="tbLogin" Width="270" Height="40" FontSize="22" BorderBrush="#FF0700DB" Margin="0,8"/>
+                <PasswordBox  Tag="Пароль" Name="pbPassword" Width="270" Height="40"  FontSize="22" BorderBrush="#FF0700DB" Margin="0,5"/>
 
-
-
-                <Button Name="btnLogin" Content="Log In"  Click="btnLogin_Click" Height="40" Width="170" FontSize="24" BorderBrush="#FFDDDDDD" Margin="0,40,0,0"/>
-                
-
-
-
+                <Button Name="btnLogin" Content="Войти"  Click="btnLogin_Click" Height="50" Width="190" FontStyle="Italic" FontSize="24" FontWeight="ExtraBold" Background="#FF004462" Margin="10, 40, 10, 10">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
+                    </Button.Effect>
+                </Button>
             </StackPanel>
-                
         </Border>
-        
+
     </Grid>
-    
+
 </Window>
