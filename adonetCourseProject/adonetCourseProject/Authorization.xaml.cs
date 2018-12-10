@@ -23,7 +23,8 @@ namespace adonetCourseProject
         public Authorization()
         {
             InitializeComponent();
-
+            pbPassword.Password = "ceo";
+            tbLogin.Text = "ceo";
 
         }
 
@@ -41,7 +42,7 @@ namespace adonetCourseProject
             {
 
                 string pswdHashed = MD5Hash.GetMD5Hash(pbPassword.Password);
-
+               
                 if (ctx.Accounts.Where(a => a.Login == tbLogin.Text && a.Password == pswdHashed).Count() > 0)
                 {
                     Account account = ctx.Accounts.Where(a => a.Login == tbLogin.Text && a.Password == pswdHashed).First();

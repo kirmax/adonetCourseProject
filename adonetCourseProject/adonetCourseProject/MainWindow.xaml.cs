@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
 namespace adonetCourseProject
 {
@@ -20,13 +21,19 @@ namespace adonetCourseProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow(Employee employee)
         {
+            
             InitializeComponent();
-            EmployeePositionAccess(employee.Position.Name);
+            
             using (DatabaseContext ctx = new DatabaseContext())
             {
-              //  lvEmployee.ItemsSource = ctx.Employees.ToList().Where(em => em.Account == null).ToList(); not working
+                var employees = ctx.Employees.Include(e => e.Position).ToList();
+                EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
+                lvEmployee.ItemsSource = employees;
+                
+                
             }
         }
 

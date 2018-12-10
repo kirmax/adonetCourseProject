@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace adonetCourseProject
 {
     public class Employee
@@ -23,6 +22,7 @@ namespace adonetCourseProject
 
         public virtual Account Account { get; set; }
 
+        public int? PositionId { get; set; }
         public Position Position { get; set; }
         
 
