@@ -26,7 +26,7 @@ namespace adonetCourseProject
         {
             
             InitializeComponent();
-            
+            EmployeePositionAccess(employee.Position.Name);
             using (DatabaseContext ctx = new DatabaseContext())
             {
                 var employees = ctx.Employees.Include(e => e.Position).ToList();
@@ -35,6 +35,8 @@ namespace adonetCourseProject
                 
                 
             }
+
+            lblEmployeeCount.Content = lvEmployee.Items.Count;
         }
 
         public void EmployeePositionAccess(string position)
@@ -52,6 +54,31 @@ namespace adonetCourseProject
                 default:
                     break;
             }
+        }
+
+        private void lvEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lblEmployeeCount.Content = lvEmployee.Items.Count;
+        }
+
+        private void btnAddEmployee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEditEmployee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDeleteEmployee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lvEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 
