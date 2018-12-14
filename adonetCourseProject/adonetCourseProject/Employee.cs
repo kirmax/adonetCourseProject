@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,24 @@ namespace adonetCourseProject
 
         public int? PositionId { get; set; }
         public Position Position { get; set; }
-        
+
+        [NotMapped]
+        public string DateView  => Birthdate.ToLongDateString();
+
+        public static byte[] GetImageBytes(string path)
+        {
+            FileInfo fi = new FileInfo(path);
+            byte[] image;
+            
+            using (FileStream fs = new FileStream(fi.FullName, FileMode.Open))
+            {
+                image = new byte[fs.Length];
+                fs.Read(image, 0, image.Length);
+            }
+             return image;
+        }
+
+
 
     }
 

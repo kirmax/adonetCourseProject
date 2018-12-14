@@ -5,16 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:adonetCourseProject"
         mc:Ignorable="d"
-        Title="Authorization" Height="400" Width="600">
-    <StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0,80,0,10">
-            <TextBlock Text="Login" Margin="90,0" FontSize="36"/>
-            <TextBox Name="tbLogin" Width="270" Height="40" Margin="-50,0" FontSize="22"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Password" FontSize="36" Margin="40,0"/>
-            <PasswordBox Name="pbPassword" Width="270" Height="40"  Margin="-10,5" FontSize="22"/>
-        </StackPanel>
-        <Button Name="btnLogin" Content="Login" Margin="130,60,130,20" Click="btnLogin_Click" Height="50" Width="190" FontSize="26"/>
-    </StackPanel>
+        Title="Authorization" Height="400" Width="600" Background="#FF016E9D">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+
+
+        <Border Background="White"
+                CornerRadius="10"
+                Padding="15,30,15,15"
+                Width="340"
+                Margin="10,30,10,30">
+            <Border.Effect>
+                <DropShadowEffect Color="#FF5B5A5A" Direction="280"/>
+            </Border.Effect>
+            <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextBlock.TextAlignment="Center"
+                    Margin="10 2 10 40">
+                <TextBlock Text="Пожалуйста авторизуйтесь" FontSize="18" FontStyle="Italic" Foreground="#FF0700DB" FontWeight="Thin" Margin="10 10 10 20 "/>
+                <TextBox Style="{StaticResource tbAuthorization}" Tag="Логин" Name="tbLogin" Width="270" Height="40" FontSize="22" BorderBrush="#FF0700DB"/>
+                <TextBox Style="{StaticResource tbAuthorization}" Tag="Пароль" Name="pbPassword" Width="270" Height="40"  FontSize="22" BorderBrush="#FF0700DB"/>
+
+                <Button Style="{StaticResource btnEnter}" Name="btnLogin" Content="Войти"  Click="btnLogin_Click" Height="50" Width="190" FontStyle="Italic" FontSize="24" FontWeight="ExtraBold" Background="#FF004462" Margin="10 40 0 0">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
+                    </Button.Effect>
+                </Button>
+            </StackPanel>
+        </Border>
+
+    </Grid>
 </Window>

@@ -127,7 +127,35 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\employeement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\analysis.png" />
+    <Resource Include="images\close.png" />
+    <Resource Include="images\coming_document.png" />
+    <Resource Include="images\document.png" />
+    <Resource Include="images\documentx32.png" />
+    <Resource Include="images\exam.png" />
+    <Resource Include="images\examx24.png" />
+    <Resource Include="images\file.png" />
+    <Resource Include="images\info.png" />
+    <Resource Include="images\menu_button.png" />
+    <Resource Include="images\pencil.png" />
+    <Resource Include="images\pencil_over.png" />
+    <Resource Include="images\progress.png" />
+    <Resource Include="images\research.png" />
+    <Resource Include="images\search.png" />
+    <Resource Include="images\settings.png" />
+    <Resource Include="images\statistics.png" />
+    <Resource Include="images\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
