@@ -43,3 +43,4 @@ C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetC
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csproj.GenerateResource.Cache
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csproj.CoreCompileInputs.cache
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.exe
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csprojResolveAssemblyReference.cache

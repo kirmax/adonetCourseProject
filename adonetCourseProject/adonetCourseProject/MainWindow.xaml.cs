@@ -31,7 +31,7 @@ namespace adonetCourseProject
                 var employees = ctx.Employees.Include(e => e.Position).ToList();
               
                 EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
-                dgEmployee.ItemsSource = employees;
+                lvEmployee.ItemsSource = employees;
                 
                 
             }

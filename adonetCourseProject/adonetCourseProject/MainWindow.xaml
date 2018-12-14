@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:adonetCourseProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="780" >
+        Title="MainWindow" Height="450" Width="880" >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,17 +13,20 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
-        <TextBox HorizontalAlignment="Center"  Grid.Row="0" Margin=" 0 10" Width="150" Style="{StaticResource tbSearch}"/>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBox Grid.Row="0" Margin="0 15" Width="150" Style="{StaticResource tbSearch}"/>
+            <Button Width="32" Margin="0 15" Style="{StaticResource btnTextbox}"/>
+        </StackPanel>
         <StackPanel Grid.RowSpan="2" Panel.ZIndex="1" HorizontalAlignment="Left" Style="{StaticResource spSlideLeft}"  Width="200" x:Name="spLeft" Background="#FF016E9D" Margin="-150,0,0,0">
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
                 <Label Style="{DynamicResource MenuLabel}" Width="140" Content="Главная" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
-                <Image Margin="10 0 0 0" Width="30" Height="30" Source="images\home.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/> 
+                <Image Margin="10 0 0 0" Width="30" Height="30" Source="images\home.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
             </DockPanel>
 
@@ -35,58 +38,96 @@
 
 
         </StackPanel>
-        <DataGrid AutoGenerateColumns="False" Name="dgEmployee" Grid.Row="2" Margin="50 0 0 0" ItemsSource="{Binding employees}" Style="{DynamicResource dgEmployees}">
-            
-            <DataGrid.Columns >
-                <DataGridTemplateColumn Header="Фото" >
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding Photo}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Path=FirstName}" />
-                <DataGridTextColumn Binding="{Binding  Path=MiddleName}"  Header="Отчество"/>
-                <DataGridTextColumn Binding="{Binding  Path=LastName}" Header="Фамилия"/>
-                <DataGridTextColumn Binding="{Binding  Path=Address}" Header="Адрес"/>
-                <DataGridTextColumn Binding="{Binding  Path=Phone}"  Header="Телефон"/>
-                <DataGridTextColumn Binding="{Binding  Path=DateView}" Width="100" Header="Дата рождения"/>
-                <DataGridTextColumn Binding="{Binding  Path=Email}" Header="Почта"/>
-                <DataGridTextColumn Binding="{Binding  Path=Salary}" Header="Зарплата"/>
-                <DataGridTextColumn Binding="{Binding  Path=Reward}" Header="Премия"/>
-                <DataGridTextColumn Binding="{Binding  Path=Position.Name}"  Header="Должность"/>
-            </DataGrid.Columns>
-            
-        </DataGrid>
-        <!--<ListView Grid.Row="1" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0">
+
+        <ListView Grid.Row="1" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0">
             <ListView.View>
                 <GridView>
 
-                    <GridViewColumn Header="Фото">
+                    <GridViewColumn Width="100" Header="Фото">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Photo}"/>
+                                <Image  Width="100" Source="{Binding Photo}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn   Header="Имя">
+                    <GridViewColumn  Header="Имя">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBox Style="{StaticResource tbAuthorization}" Text="{Binding FirstName}"/>
+                                <TextBox Text="{Binding FirstName}" Background="Transparent" BorderThickness="0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding MiddleName}"  Header="Отчество"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Фамилия"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Address}" Header="Адрес"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Phone}"  Header="Телефон"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding DateView}" Width="100" Header="Дата рождения"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="Почта"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Salary}" Header="Зарплата"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Reward}" Header="Премия"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Position.Name}"  Header="Должность"/>
+                    <GridViewColumn  Header="Отчество">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding MiddleName}" Width="100" Background="Transparent" BorderThickness="0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn  Header="Фамилия">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding LastName}" Background="Transparent" BorderThickness="0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn  Header="Адрес">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Address}" Background="Transparent" BorderThickness="0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn  Header="Телефон">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Phone}" Background="Transparent" BorderThickness="0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn  Header="Дата рождения">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker Text="{Binding DateView}" Background="Transparent" BorderThickness="0" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn  Header="Почта">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Email}" Background="Transparent" BorderThickness="0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn  Header="Зарплата">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Salary}" Background="Transparent" BorderThickness="0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn  Header="Премия">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Reward}" Background="Transparent" BorderThickness="0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn  Header="Должность">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Position.Name}" Background="Transparent" BorderThickness="0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                   
                 </GridView>
             </ListView.View>
-        </ListView>-->
+        </ListView>
     </Grid>
 </Window>
