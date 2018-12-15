@@ -72,6 +72,9 @@
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="DBInitializer.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeManagment.xaml.cs">
+      <DependentUpon>EmployeeManagment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MD5Hash.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Purchase.cs" />
@@ -83,6 +86,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmployeeManagment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,6 +166,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\searchbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\addbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\deletebtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\editbtn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -68,39 +68,26 @@
         <Setter Property="TextOptions.TextRenderingMode" Value="Auto"/>
 
     </Style>
-    <Style x:Key="btnTextbox" TargetType="Button">
+    <Style x:Key="btnTextbox" TargetType="Button" >
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="Button" >
 
                     <Grid Margin="0 2">
                         <Border 
                             CornerRadius="5"
-                            Width="20">
-                            <Image Width="20" Source="/images/searchbtn.png" Stretch="Uniform" />
-                            
+                            Width="30">
+                            <Image Width="30" Source="/images/searchbtn.png" Stretch="Uniform" >
+
+                            </Image>
+
 
                         </Border>
                     </Grid>
-                    <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation To="#FFACB5B9" Duration="0:0:0.3" Storyboard.TargetProperty="Background.Color"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation To="Transparent" Duration="0:0:0.3" Storyboard.TargetProperty="Background.Color"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        
-                    </ControlTemplate.Triggers>
+
+
                 </ControlTemplate>
-                
+
             </Setter.Value>
         </Setter>
     </Style>
@@ -297,9 +284,9 @@
 
                         <Border CornerRadius="5" x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                             <Grid>
-                                
+
                                 <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" BorderBrush="#FF0700DB"/>
-                              
+
                             </Grid>
                         </Border>
 
@@ -311,4 +298,76 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+    <Style x:Key="btnadd" TargetType="{x:Type Button}">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+
+                    <Grid Margin="0 2">
+                        <Border 
+                            CornerRadius="5"
+                            Width="40">
+                            <Image Width="40" Source="/images/addbtn.png" Stretch="Uniform" OpacityMask="Black" >
+
+
+                            </Image>
+
+
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="btndelete" TargetType="{x:Type Button}">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+
+                    <Grid Margin="0 2">
+                        <Border 
+                            CornerRadius="5"
+                            Width="40">
+                            <Image Width="40" Source="/images/deletebtn.png" Stretch="Uniform" OpacityMask="Black" >
+
+
+                            </Image>
+
+
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="btnedit" TargetType="{x:Type Button}">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+
+                    <Grid Margin="0 2">
+                        <Border 
+                            CornerRadius="5"
+                            Width="40">
+                            <Image Width="40" Source="/images/editbtn.png" Stretch="Uniform" OpacityMask="Black" >
+
+
+                            </Image>
+
+
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
