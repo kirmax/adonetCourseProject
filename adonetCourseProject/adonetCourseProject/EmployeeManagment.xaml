@@ -23,20 +23,20 @@
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
                 <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
-                <Button  Name="btnAdd" Style="{DynamicResource btnadd}" >
+                <Button  Name="btnAdd" Style="{DynamicResource btnadd}" Click="BtnAdd_Click" >
 
                 </Button>
-                <Button Name="btnDelete" Style="{StaticResource btndelete}">
+                <Button Name="btnDelete" Style="{StaticResource btndelete}" Click="BtnDelete_Click">
 
                 </Button>
-                <Button Name="btnEdit" Style="{StaticResource btnedit}">
+                <Button Name="btnEdit" Style="{StaticResource btnedit}" Click="BtnEdit_Click">
 
                 </Button>
             </StackPanel>
            
             
 
-            <ListView Grid.Row="1" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0" >
+            <ListView Grid.Row="1" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0">
                 <ListView.View>
                     <GridView>
 
@@ -53,7 +53,7 @@
                             <GridViewColumn.CellTemplate>
 
                                 <DataTemplate>
-                                    <TextBox Text="{Binding MiddleName}" Background="Transparent" BorderThickness="0"  MinWidth="50"/>
+                                    <TextBox Text="{Binding MiddleName}" Name="tbMidName" Background="Transparent" BorderThickness="0"  MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

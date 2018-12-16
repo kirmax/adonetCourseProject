@@ -26,30 +26,14 @@ namespace adonetCourseProject
         {
             InitializeComponent();
 
-
             var employees = instance.GetAll();
             EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
-            ucEmployeeManagment.lvEmployee.ItemsSource = employees;
-
-            ucEmployeeManagment.btnAdd.Click += BtnAdd_Click;
-            ucEmployeeManagment.btnDelete.Click += BtnDelete_Click;
+          
             
-            
-        }
 
-        private void BtnDelete_Click(object sender, RoutedEventArgs e)
-        {
-            
-            instance.Delete(ucEmployeeManagment.lvEmployee.SelectedIndex + 1);
-            ucEmployeeManagment.lvEmployee.ItemsSource = instance.GetAll();
+           
 
-        }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            
-            instance.Create(new Employee());
-            ucEmployeeManagment.lvEmployee.ItemsSource = instance.GetAll();
 
         }
 

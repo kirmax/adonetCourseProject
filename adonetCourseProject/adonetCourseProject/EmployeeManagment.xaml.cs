@@ -20,17 +20,43 @@ namespace adonetCourseProject
     /// </summary>
     public partial class EmployeeManagment : UserControl
     {
+
+        EmployeeRepository instance = EmployeeRepository.GetInstance();
         public EmployeeManagment()
         {
             InitializeComponent();
 
-           
+            var employees = instance.GetAll();
+            lvEmployee.ItemsSource = employees;
+
 
         }
 
-       /* private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            
-        }*/
+           
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if(lvEmployee.SelectedIndex != -1)
+            { 
+            instance.Delete(lvEmployee.SelectedIndex + 1);
+            lvEmployee.ItemsSource = instance.GetAll();
+            }
+            else
+            {
+                MessageBox.Show("Error", "Select employee to delete");
+            }
+
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+            instance.Create(new Employee());
+            lvEmployee.ItemsSource = instance.GetAll();
+
+        }
     }
 }
