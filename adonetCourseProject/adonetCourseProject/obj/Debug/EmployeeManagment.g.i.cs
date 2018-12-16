@@ -115,12 +115,30 @@ namespace adonetCourseProject {
             return;
             case 2:
             this.btnAdd = ((System.Windows.Controls.Button)(target));
+            
+            #line 26 "..\..\EmployeeManagment.xaml"
+            this.btnAdd.Click += new System.Windows.RoutedEventHandler(this.BtnAdd_Click);
+            
+            #line default
+            #line hidden
             return;
             case 3:
             this.btnDelete = ((System.Windows.Controls.Button)(target));
+            
+            #line 29 "..\..\EmployeeManagment.xaml"
+            this.btnDelete.Click += new System.Windows.RoutedEventHandler(this.BtnDelete_Click);
+            
+            #line default
+            #line hidden
             return;
             case 4:
             this.btnEdit = ((System.Windows.Controls.Button)(target));
+            
+            #line 32 "..\..\EmployeeManagment.xaml"
+            this.btnEdit.Click += new System.Windows.RoutedEventHandler(this.BtnEdit_Click);
+            
+            #line default
+            #line hidden
             return;
             case 5:
             this.lvEmployee = ((System.Windows.Controls.ListView)(target));
