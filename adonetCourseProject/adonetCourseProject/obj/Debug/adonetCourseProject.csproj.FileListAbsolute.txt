@@ -44,3 +44,28 @@ C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetC
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csproj.CoreCompileInputs.cache
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.exe
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csprojResolveAssemblyReference.cache
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\adonetCourseProject.exe.config
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\adonetCourseProject.exe
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\adonetCourseProject.pdb
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\EntityFramework.dll
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\EntityFramework.SqlServer.dll
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\EntityFramework.xml
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\EntityFramework.SqlServer.xml
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csprojResolveAssemblyReference.cache
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Authorization.g.cs
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\EmployeeManagment.g.cs
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\MainWindow.g.cs
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\App.g.cs
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject_MarkupCompile.cache
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject_MarkupCompile.lref
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Authorization.baml
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Dictionary.baml
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\EmployeeManagment.baml
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\MainWindow.baml
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.g.resources
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.Properties.Resources.resources
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csproj.GenerateResource.Cache
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csproj.CoreCompileInputs.cache
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.exe
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.pdb

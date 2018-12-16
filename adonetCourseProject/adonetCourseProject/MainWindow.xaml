@@ -13,12 +13,14 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-
+    
     <Grid>
+        <!--
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
+        
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
             <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
@@ -32,6 +34,7 @@
 
             </Button>
         </StackPanel>
+        -->
         <StackPanel Grid.RowSpan="2" Panel.ZIndex="1" HorizontalAlignment="Left" Style="{StaticResource spSlideLeft}"  Width="200" x:Name="spLeft" Background="#FF016E9D" Margin="-150,0,0,0">
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
                 <Label Style="{DynamicResource MenuLabel}" Width="140" Content="Главная" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
@@ -47,7 +50,7 @@
 
 
         </StackPanel>
-
+        <!--
         <ListView Grid.Row="1" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0" >
             <ListView.View>
                 <GridView>
@@ -141,5 +144,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        -->
+        <StackPanel>
+            <local:EmployeeManagment x:Name="ucEmployeeManagment"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Linq;
@@ -16,7 +17,8 @@ namespace adonetCourseProject
         public string LastName { get; set;}
         public string Address { get; set; }
         public string Phone { get; set; }
-        public DateTime Birthdate { get; set; }
+        //[DefaultValue("getdate()")]
+        public DateTime Birthdate { get; set; } = DateTime.Now;
         public string Email { get; set; }
         public decimal Salary { get; set; }
         public decimal Reward { get; set; }

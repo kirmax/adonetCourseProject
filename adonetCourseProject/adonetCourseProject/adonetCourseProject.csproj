@@ -46,7 +46,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -75,6 +74,8 @@
     <Compile Include="EmployeeManagment.xaml.cs">
       <DependentUpon>EmployeeManagment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeRepository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="MD5Hash.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Purchase.cs" />

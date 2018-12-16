@@ -23,7 +23,7 @@
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
                 <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
-                <Button  Name="btnAdd" Style="{DynamicResource btnadd}">
+                <Button  Name="btnAdd" Style="{DynamicResource btnadd}" >
 
                 </Button>
                 <Button Name="btnDelete" Style="{StaticResource btndelete}">

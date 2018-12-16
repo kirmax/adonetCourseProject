@@ -21,20 +21,36 @@ namespace adonetCourseProject
     /// </summary>
     public partial class MainWindow : Window
     {
-       
+        EmployeeRepository instance = EmployeeRepository.GetInstance();
         public MainWindow(Employee employee)
         {
             InitializeComponent();
+
+
+            var employees = instance.GetAll();
+            EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
+            ucEmployeeManagment.lvEmployee.ItemsSource = employees;
+
+            ucEmployeeManagment.btnAdd.Click += BtnAdd_Click;
+            ucEmployeeManagment.btnDelete.Click += BtnDelete_Click;
             
-            using (DatabaseContext ctx = new DatabaseContext())
-            {
-                var employees = ctx.Employees.Include(e => e.Position).ToList();
-              
-                EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
-                lvEmployee.ItemsSource = employees;
-                
-                
-            }
+            
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            
+            instance.Delete(ucEmployeeManagment.lvEmployee.SelectedIndex + 1);
+            ucEmployeeManagment.lvEmployee.ItemsSource = instance.GetAll();
+
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            
+            instance.Create(new Employee());
+            ucEmployeeManagment.lvEmployee.ItemsSource = instance.GetAll();
+
         }
 
         public void EmployeePositionAccess(string position)
