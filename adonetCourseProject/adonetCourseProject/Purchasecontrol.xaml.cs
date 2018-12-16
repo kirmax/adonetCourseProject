@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace adonetCourseProject
 {
     /// <summary>
-    /// Логика взаимодействия для EmployeeManagment.xaml
+    /// Логика взаимодействия для Purchasecontrol.xaml
     /// </summary>
-    public partial class EmployeeManagment : UserControl
+    public partial class Purchasecontrol : UserControl
     {
-        public EmployeeManagment()
+        public Purchasecontrol()
         {
             InitializeComponent();
-            
-           
-
         }
-
-       /* private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }*/
     }
 }

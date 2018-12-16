@@ -24,32 +24,46 @@ namespace adonetCourseProject
         EmployeeRepository instance = EmployeeRepository.GetInstance();
         public MainWindow(Employee employee)
         {
+            
             InitializeComponent();
-
+            DatabaseContext ctx = new DatabaseContext();
 
             var employees = instance.GetAll();
             EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
-            ucEmployeeManagment.lvEmployee.ItemsSource = employees;
+            var purchases = ctx.Purchases.ToList();
+            lvEmployee.ItemsSource = purchases;
+            
+            //ucEmployeeManagment.lvEmployee.ItemsSource = employees;
 
-            ucEmployeeManagment.btnAdd.Click += BtnAdd_Click;
-            ucEmployeeManagment.btnDelete.Click += BtnDelete_Click;
+            //ucEmployeeManagment.btnAdd.Click += BtnAdd_Click;
+            //ucEmployeeManagment.btnDelete.Click += BtnDelete_Click;
             
             
         }
 
+       
+
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            
-            instance.Delete(ucEmployeeManagment.lvEmployee.SelectedIndex + 1);
-            ucEmployeeManagment.lvEmployee.ItemsSource = instance.GetAll();
+            //if (ucEmployeeManagment.lvEmployee.SelectedIndex > 0)
+            //{
+            //    Employee selectedEmployee = ucEmployeeManagment.lvEmployee.SelectedItem as Employee;
+            //    instance.Delete(selectedEmployee.Id);
+            //    ucEmployeeManagment.lvEmployee.ItemsSource = instance.GetAll();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Низя");
+            //}
+           
 
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             
-            instance.Create(new Employee());
-            ucEmployeeManagment.lvEmployee.ItemsSource = instance.GetAll();
+            //instance.Create(new Employee());
+            //ucEmployeeManagment.lvEmployee.ItemsSource = instance.GetAll();
 
         }
 

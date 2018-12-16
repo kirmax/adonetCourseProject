@@ -36,11 +36,11 @@
            
             
 
-            <ListView Grid.Row="1" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0" >
+            <ListView Grid.Row="1" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0" FontStyle="Italic" >
                 <ListView.View>
                     <GridView>
-
-                        <GridViewColumn Width="150" Header="Фото">
+                    
+                    <GridViewColumn Width="150" Header="Фото" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Image  Width="150" Source="{Binding Photo}"/>
@@ -51,23 +51,23 @@
                         <GridViewColumn Header="Отчество" >
 
                             <GridViewColumn.CellTemplate>
-
+                                    
                                 <DataTemplate>
-                                    <TextBox Text="{Binding MiddleName}" Background="Transparent" BorderThickness="0"  MinWidth="50"/>
+                                    <TextBox  IsEnabled="True" Name="tbMiddleName" Text="{Binding MiddleName}" Background="Transparent" BorderThickness="0"  MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Имя">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding FirstName}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True"  Name="tbFirstName" Text="{Binding FirstName}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Фамилия">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding LastName}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True"  Name="tbLastName" Text="{Binding LastName}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -75,7 +75,7 @@
                         <GridViewColumn  Header="Адрес">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Address}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True"  Name="tbAdress" Text="{Binding Address}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -83,21 +83,21 @@
                         <GridViewColumn  Header="Телефон">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Phone}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbPhone" Text="{Binding Phone}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Дата рождения">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <DatePicker Text="{Binding DateView}" Background="Transparent" BorderThickness="0" />
+                                <DatePicker IsHitTestVisible="False" Name="dpDate" Text="{Binding DateView}" Background="Transparent" BorderThickness="0" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Почта">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Email}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbEmail" Text="{Binding Email}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -105,7 +105,7 @@
                         <GridViewColumn  Header="Зарплата">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Salary}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbSalary" Text="{Binding Salary}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -113,7 +113,7 @@
                         <GridViewColumn  Header="Премия">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Reward}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbReward" Text="{Binding Reward}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -121,7 +121,7 @@
                         <GridViewColumn  Header="Должность">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Position.Name}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbPosition" Text="{Binding Position.Name}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

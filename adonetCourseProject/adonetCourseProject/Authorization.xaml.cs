@@ -75,7 +75,7 @@ namespace adonetCourseProject
                 Login = tbLogin.Text,
                 Password = pbPassword.Text
             });
-            //await Task.Run(new Action(() => ThreadParams(tbLogin.Text, pbPassword.Password)));
+          // await Task.Run(new Action(() => ThreadParams(tbLogin.Text, pbPassword.Text)));
         }
     }
 
