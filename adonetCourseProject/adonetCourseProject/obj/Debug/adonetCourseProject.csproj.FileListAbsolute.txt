@@ -57,6 +57,7 @@ C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetC
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Authorization.g.cs
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\EmployeeManagment.g.cs
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\MainWindow.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Purchasecontrol.g.cs
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\App.g.cs
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject_MarkupCompile.cache
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject_MarkupCompile.lref
@@ -64,6 +65,7 @@ C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetC
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Dictionary.baml
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\EmployeeManagment.baml
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\MainWindow.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Purchasecontrol.baml
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.g.resources
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.Properties.Resources.resources
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csproj.GenerateResource.Cache

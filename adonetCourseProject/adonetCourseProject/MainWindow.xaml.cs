@@ -22,18 +22,23 @@ namespace adonetCourseProject
     public partial class MainWindow : Window
     {
         EmployeeRepository instance = EmployeeRepository.GetInstance();
+        public List<Purchase> Purchases { get; set; } = new List<Purchase>();
         public MainWindow(Employee employee)
         {
-            
+
             InitializeComponent();
             DatabaseContext ctx = new DatabaseContext();
 
             var employees = instance.GetAll();
             EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
-          
-            
+            Purchases = ctx.Purchases.ToList();
+
+            lvPurchases.ItemsSource = Purchases;
 
            
+            
+            
+
 
 
 
@@ -43,8 +48,8 @@ namespace adonetCourseProject
         {
             switch (position)
             {
-               /* case "Admin":
-                    break;*/
+                /* case "Admin":
+                     break;*/
                 case "CEO":
                     break;
                 case "Secretary":
@@ -56,9 +61,11 @@ namespace adonetCourseProject
             }
         }
 
-       
-
-       
+        private void tvProduct_Expanded(object sender, RoutedEventArgs e)
+        {
+                      ((GridView)lvPurchases.View).Columns.Where(h => h.Header.Equals("Поставщик")).First().Width = 160;
+            
+        }
     }
 
 

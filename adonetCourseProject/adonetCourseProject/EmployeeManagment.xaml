@@ -53,21 +53,21 @@
                             <GridViewColumn.CellTemplate>
                                     
                                 <DataTemplate>
-                                    <TextBox Text="{Binding MiddleName}" Name="tbMidName" Background="Transparent" BorderThickness="0"  MinWidth="50"/>
+                                    <TextBox Text="{Binding MiddleName}" Name="tbMidName" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Имя">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox IsReadOnly="True"  Name="tbFirstName" Text="{Binding FirstName}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True"  Name="tbFirstName" Text="{Binding FirstName}" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Фамилия">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox IsReadOnly="True"  Name="tbLastName" Text="{Binding LastName}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True"  Name="tbLastName" Text="{Binding LastName}" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -75,7 +75,7 @@
                         <GridViewColumn  Header="Адрес">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox IsReadOnly="True"  Name="tbAdress" Text="{Binding Address}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True"  Name="tbAdress" Text="{Binding Address}" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -83,21 +83,21 @@
                         <GridViewColumn  Header="Телефон">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox IsReadOnly="True" Name="tbPhone" Text="{Binding Phone}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbPhone" Text="{Binding Phone}" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Дата рождения">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <DatePicker IsHitTestVisible="False" Name="dpDate" Text="{Binding DateView}" Background="Transparent" BorderThickness="0" />
+                                <DatePicker IsHitTestVisible="False" Name="dpDate" Text="{Binding DateView}" Background="Transparent" BorderThickness="0" Style="{StaticResource dtpInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Почта">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox IsReadOnly="True" Name="tbEmail" Text="{Binding Email}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbEmail" Text="{Binding Email}" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -105,7 +105,7 @@
                         <GridViewColumn  Header="Зарплата">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox IsReadOnly="True" Name="tbSalary" Text="{Binding Salary}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbSalary" Text="{Binding Salary}" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -113,7 +113,7 @@
                         <GridViewColumn  Header="Премия">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox IsReadOnly="True" Name="tbReward" Text="{Binding Reward}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbReward" Text="{Binding Reward}" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -121,7 +121,7 @@
                         <GridViewColumn  Header="Должность">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox IsReadOnly="True" Name="tbPosition" Text="{Binding Position.Name}" Background="Transparent" BorderThickness="0" MinWidth="50"/>
+                                <TextBox IsReadOnly="True" Name="tbPosition" Text="{Binding Position.Name}" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
