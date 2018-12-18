@@ -29,7 +29,7 @@
                 <Button Name="btnDelete" Style="{StaticResource btndelete}" Click="BtnDelete_Click">
 
                 </Button>
-                <Button Name="btnEdit" Style="{StaticResource btnedit}" Click="BtnEdit_Click">
+                <Button Name="btnEdit" Style="{StaticResource btnedit}" Click="BtnEdit_ClickToEdit">
 
                 </Button>
             </StackPanel>
@@ -53,7 +53,7 @@
                             <GridViewColumn.CellTemplate>
                                     
                                 <DataTemplate>
-                                    <TextBox Text="{Binding MiddleName}" Name="tbMidName" Style="{StaticResource tbInner}"/>
+                                    <TextBox IsReadOnly="True" Text="{Binding MiddleName}" Name="tbMidName" Style="{StaticResource tbInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

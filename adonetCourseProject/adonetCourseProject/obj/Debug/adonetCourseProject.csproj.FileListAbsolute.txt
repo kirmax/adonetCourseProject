@@ -73,3 +73,5 @@ C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetC
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.exe
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.pdb
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csprojResolveAssemblyReference.cache
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Purchasecontrol.g.cs
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Purchasecontrol.baml

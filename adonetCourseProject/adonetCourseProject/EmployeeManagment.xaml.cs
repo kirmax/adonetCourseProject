@@ -32,9 +32,47 @@ namespace adonetCourseProject
 
         }
 
-        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnEdit_ClickToEdit(object sender, RoutedEventArgs e)
         {
-           
+
+
+            
+
+            (((GridView)lvEmployee.View).Columns[1].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+            
+            (((GridView)lvEmployee.View).Columns[2].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+            
+            (((GridView)lvEmployee.View).Columns[3].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+            (((GridView)lvEmployee.View).Columns[4].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+            (((GridView)lvEmployee.View).Columns[5].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+            (((GridView)lvEmployee.View).Columns[6].CellTemplate.LoadContent() as DatePicker).IsHitTestVisible = true;
+            (((GridView)lvEmployee.View).Columns[7].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+            (((GridView)lvEmployee.View).Columns[8].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+            (((GridView)lvEmployee.View).Columns[9].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+            (((GridView)lvEmployee.View).Columns[10].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
+
+           // btnEdit.Click += BtnEdit_ClickToSubmit;
+            
+
+        }
+
+        private void BtnEdit_ClickToSubmit(object sender, RoutedEventArgs e)
+        {
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbMidName")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbFirstName")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbLastName")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbAddress")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbPhone")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("dpDate")).First().CellTemplate.LoadContent() as DatePicker).IsHitTestVisible = false;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbEmail")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbSalary")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbReward")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+            (((GridView)lvEmployee.View).Columns.Where(col => col.Header.Equals("tbPosition")).First().CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
+
+            instance.Update(lvEmployee.SelectedItem as Employee);
+
+            btnEdit.Click += BtnEdit_ClickToEdit;
+
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)

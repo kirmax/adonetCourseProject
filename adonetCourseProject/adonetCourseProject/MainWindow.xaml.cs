@@ -21,19 +21,19 @@ namespace adonetCourseProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        EmployeeRepository instance = EmployeeRepository.GetInstance();
-        public List<Purchase> Purchases { get; set; } = new List<Purchase>();
+        
+       // public List<Purchase> Purchases { get; set; } = new List<Purchase>();
         public MainWindow(Employee employee)
         {
 
             InitializeComponent();
-            DatabaseContext ctx = new DatabaseContext();
-
+            //DatabaseContext ctx = new DatabaseContext();
+            EmployeeRepository instance = EmployeeRepository.GetInstance();
             var employees = instance.GetAll();
             EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
-            Purchases = ctx.Purchases.ToList();
+            /*Purchases = ctx.Purchases.ToList();
 
-            lvPurchases.ItemsSource = Purchases;
+            lvPurchases.ItemsSource = Purchases;*/
 
            
             
@@ -61,11 +61,11 @@ namespace adonetCourseProject
             }
         }
 
-        private void tvProduct_Expanded(object sender, RoutedEventArgs e)
+      /*  private void tvProduct_Expanded(object sender, RoutedEventArgs e)
         {
                       ((GridView)lvPurchases.View).Columns.Where(h => h.Header.Equals("Поставщик")).First().Width = 160;
             
-        }
+        }*/
     }
 
 

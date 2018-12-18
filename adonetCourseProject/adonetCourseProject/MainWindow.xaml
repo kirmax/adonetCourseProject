@@ -20,9 +20,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="200*"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
-
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+        
+        <!--<StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
             <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
             <Button  Name="btnAdd" Style="{DynamicResource btnadd}">
@@ -34,7 +35,7 @@
             <Button Name="btnEdit" Style="{StaticResource btnedit}">
 
             </Button>
-        </StackPanel>
+        </StackPanel> -->
 
         <StackPanel Grid.RowSpan="2" Panel.ZIndex="1" HorizontalAlignment="Left" Style="{StaticResource spSlideLeft}"  Width="200" x:Name="spLeft" Background="#FF016E9D" Margin="-150,0,0,0">
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
@@ -52,7 +53,7 @@
 
         </StackPanel>
 
-        <ListView Grid.Row="1" x:Name="lvPurchases" Margin="50,0,0,0" FontStyle="Italic" >
+        <!--<ListView Grid.Row="1" x:Name="lvPurchases" Margin="50,0,0,0" FontStyle="Italic" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Продукт">
@@ -65,7 +66,7 @@
 
 
                                         <TreeViewItem  Expanded="tvProduct_Expanded" Header="{Binding Product.Name}">
-                                          
+
                                             <StackPanel >
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Цена:"/>
@@ -83,7 +84,7 @@
                                         </TreeViewItem>
                                     </TreeView>
 
-                                    <!--<StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal">
                                         <TextBlock  Text="Название:"/>
                                         <TextBox Text="{Binding Product.Name}"  Style="{StaticResource tbInner}" />
                                     </StackPanel>
@@ -98,7 +99,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Описание:"/>
                                         <TextBox Text="{Binding Product.Description}"  Style="{StaticResource tbInner}"/>
-                                    </StackPanel>-->
+                                    </StackPanel>
 
                                 </StackPanel>
                             </DataTemplate>
@@ -147,7 +148,7 @@
                     <GridViewColumn  Header="Поставщик" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                
+
                                 <StackPanel>
                                     <TreeView BorderThickness="0" Background="Transparent" >
 
@@ -171,7 +172,7 @@
                                                     <TextBlock Text="Email:"/>
                                                     <TextBox Text="{Binding Supplier.Email}" Style="{StaticResource tbInner}"/>
                                                 </StackPanel>
-                                                
+
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="Описание:"/>
                                                     <TextBox Text="{Binding Product.Description}" Style="{StaticResource tbInner}"/>
@@ -179,7 +180,7 @@
                                             </StackPanel>
                                         </TreeViewItem>
                                     </TreeView>
-                                    <!--<StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Название компании:" />
                                         <TextBox Text="{Binding Supplier.CompanyName}" Style="{StaticResource tbInner}"/>
                                     </StackPanel>
@@ -202,7 +203,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Описание:"/>
                                         <TextBox Text="{Binding Supplier.Description}" Style="{StaticResource tbInner}"/>
-                                    </StackPanel>-->
+                                    </StackPanel>
 
                                 </StackPanel>
                             </DataTemplate>
@@ -213,9 +214,15 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
-        <!--<StackPanel >
-            <local:EmployeeManagment x:Name="ucEmployeeManagment" />
-           </StackPanel>-->
+        
+    </Grid>-->
+        <StackPanel Grid.RowSpan="3">
+            <local:EmployeeManagment x:Name="ucEmployeeManagment"  />
+        </StackPanel>
+            
+        
     </Grid>
+
+
+
 </Window>

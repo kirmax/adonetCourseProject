@@ -12,11 +12,11 @@ namespace adonetCourseProject
     {
         public int Id { get; set; }
         public Byte[] Photo { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set;}
-        public string Address { get; set; }
-        public string Phone { get; set; }
+        public string FirstName { get; set; } = "Имя"; 
+        public string MiddleName { get; set; } = "Имя";
+        public string LastName { get; set; } = "Имя";
+        public string Address { get; set; } = "Имя";
+        public string Phone { get; set; } = "Имя";
         //[DefaultValue("getdate()")]
         public DateTime Birthdate { get; set; } = DateTime.Now;
         public string Email { get; set; }
