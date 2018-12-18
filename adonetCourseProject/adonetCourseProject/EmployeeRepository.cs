@@ -70,23 +70,26 @@ namespace adonetCourseProject
 
         public void Update(Employee item)
         {
-            Employee employee = ctx.Employees.Find(item.Id);
-            if (employee != null)
-            {
-                employee.Photo = item.Photo;
-                employee.FirstName = item.FirstName;
-                employee.MiddleName = item.MiddleName;
-                employee.LastName = item.LastName;
-                employee.Address = item.Address;
-                employee.Phone = item.Phone;
-                employee.Birthdate = item.Birthdate;
-                employee.Email = item.Email;
-                employee.Salary = item.Salary;
-                employee.Reward = item.Reward;
-                employee.Position.Name = item.Position.Name;
+            using (ctx = new DatabaseContext())
+            { 
+                Employee employee = ctx.Employees.Find(item.Id - 1);
+                if (employee != null)
+                {
+                    employee.Photo = item.Photo;
+                    employee.FirstName = item.FirstName;
+                    employee.MiddleName = item.MiddleName;
+                    employee.LastName = item.LastName;
+                    employee.Address = item.Address;
+                    employee.Phone = item.Phone;
+                    employee.Birthdate = item.Birthdate;
+                    employee.Email = item.Email;
+                    employee.Salary = item.Salary;
+                    employee.Reward = item.Reward;
+                    employee.Position.Name = item.Position.Name;
 
-                ctx.Entry(employee).State = EntityState.Modified;
-                ctx.SaveChanges();
+                    ctx.Entry(employee).State = EntityState.Modified;
+                    ctx.SaveChanges();
+                }
             }
         }
     }
