@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="adonetCourseProject.Purchasecontrol"
+﻿<UserControl x:Class="adonetCourseProject.Shipmentcontrol"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,41 +6,38 @@
              xmlns:local="clr-namespace:adonetCourseProject"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="880">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Dictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
+    
+        <UserControl.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Dictionary.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </UserControl.Resources>
 
-    <Grid>
-
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="200*"/>
-        </Grid.RowDefinitions>
-
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-            <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
-            <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
-            <Button  Name="btnAdd" Style="{DynamicResource btnadd}">
-
-            </Button>
-            <Button Name="btnDelete" Style="{StaticResource btndelete}">
-
-            </Button>
-            <Button Name="btnEdit" Style="{StaticResource btnedit}">
-
-            </Button>
-        </StackPanel>
+        <Grid>
 
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="200*"/>
+            </Grid.RowDefinitions>
 
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
+                <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
+                <Button  Name="btnAdd" Style="{DynamicResource btnadd}">
 
+                </Button>
+                <Button Name="btnDelete" Style="{StaticResource btndelete}">
 
-        <ListView Grid.Row="1" x:Name="lvPurchases" Margin="50,0,0,0" FontStyle="Italic" >
+                </Button>
+                <Button Name="btnEdit" Style="{StaticResource btnedit}">
+
+                </Button>
+            </StackPanel>
+
+        <ListView Grid.Row="1" x:Name="lvShipment" Margin="50,0,0,0" FontStyle="Italic" >
 
 
             <ListView.View>
@@ -82,7 +79,7 @@
                         <GridViewColumn.CellTemplate>
 
                             <DataTemplate>
-                                <TextBox Text="{Binding Price}" Style="{StaticResource tbInner}"/>
+                                <TextBox Name="tbPrice" Text="{Binding Price}" Style="{StaticResource tbInner}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -93,18 +90,11 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn  Header="Дата покупки">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <DatePicker Text="{Binding DateP }"  Style="{StaticResource dtpInner}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
 
                     <GridViewColumn  Header="Дата доставки">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <DatePicker Text="{Binding DateS}" Style="{StaticResource dtpInner}"/>
+                                <DatePicker Text="{Binding DateShipment}" Style="{StaticResource dtpInner}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -124,29 +114,29 @@
                                     <TreeView BorderThickness="0" Background="Transparent" >
 
 
-                                        <TreeViewItem  Expanded="tvProduct_Expanded" Header="{Binding Product.CompanyName}" >
+                                        <TreeViewItem  Expanded="tvProduct_Expanded" Header="{Binding Customer.CompanyName}" >
 
                                             <StackPanel >
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Контактное имя:"/>
-                                                    <TextBox Text="{Binding Product.ContactName}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Customer.ContactName}" Style="{StaticResource tbInner}"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Адрес:"/>
-                                                    <TextBox Text="{Binding Product.Address}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Customer.Address}" Style="{StaticResource tbInner}"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Телефон:"/>
-                                                    <TextBox Text="{Binding Product.Phone}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Customer.Phone}" Style="{StaticResource tbInner}"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Email:"/>
-                                                    <TextBox Text="{Binding Product.Email}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Customer.Email}" Style="{StaticResource tbInner}"/>
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="Описание:"/>
-                                                    <TextBox Text="{Binding Product.Description}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Customer.Description}" Style="{StaticResource tbInner}"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </TreeViewItem>
@@ -162,4 +152,5 @@
         </ListView>
 
     </Grid>
+        
 </UserControl>

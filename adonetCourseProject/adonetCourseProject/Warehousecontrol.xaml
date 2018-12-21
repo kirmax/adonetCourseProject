@@ -1,48 +1,44 @@
-﻿<Window x:Class="adonetCourseProject.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:adonetCourseProject"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="880" >
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Dictionary.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
+﻿<UserControl x:Class="adonetCourseProject.Warehousecontrol"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:adonetCourseProject"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="880">
+    
+        <UserControl.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Dictionary.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </UserControl.Resources>
 
-    <Grid>
-
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="200*"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-
-        
-
-        <StackPanel Grid.RowSpan="2" Panel.ZIndex="1" HorizontalAlignment="Left" Style="{StaticResource spSlideLeft}"  Width="200" x:Name="spLeft" Background="#FF016E9D" Margin="-150,0,0,0">
-            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label Style="{DynamicResource MenuLabel}" Width="140" Content="Главная" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
-                <Image Margin="10 0 0 0" Width="30" Height="30" Source="images\home.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
-
-            </DockPanel>
-
-            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label Style="{DynamicResource MenuLabel}" Content="Отдел кадров" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro"/>
-                <Image Margin="10 0 0 0" Width="30" Height="30" Source="images\employeement.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
-
-            </DockPanel>
+        <Grid>
 
 
-        </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="200*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
+                <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
+                <Button  Name="btnAdd" Style="{DynamicResource btnadd}">
+
+                </Button>
+                <Button Name="btnDelete" Style="{StaticResource btndelete}">
+
+                </Button>
+                <Button Name="btnEdit" Style="{StaticResource btnedit}">
+
+                </Button>
+            </StackPanel>
 
         <ListView Grid.Row="1" x:Name="lvShipment" Margin="50,0,0,0" FontStyle="Italic" >
-           
+
 
             <ListView.View>
                 <GridView >
@@ -89,15 +85,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
-
-        <!--<StackPanel Grid.RowSpan="3">
-            <local:EmployeeManagment x:Name="ucEmployeeManagment"  />
-        </StackPanel>-->
-
     </Grid>
-
-
-
-
-</Window>
+</UserControl>

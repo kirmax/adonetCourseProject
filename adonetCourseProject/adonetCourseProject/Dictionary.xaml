@@ -122,7 +122,7 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="#FF00B2FF" Duration="0:0:0.3" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="#FF00B2FF" Duration="0:0:0.3" Storyboard.TargetProperty="Background.Color" />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -136,11 +136,12 @@
                         <EventTrigger RoutedEvent="Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation To="200" Duration="0:0:0.1" Storyboard.TargetProperty="Width" AutoReverse="True"/>
-                                    <DoubleAnimation To="70" Duration="0:0:0.1" Storyboard.TargetProperty="Height" AutoReverse="True"/>
+                                    <ThicknessAnimation Storyboard.TargetProperty="Margin" To="0" DecelerationRatio=".9" Duration="0:0:1"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
+                       
+                       
 
 
 
@@ -189,8 +190,8 @@
 
 
 
-   
-   
+
+
     <Style x:Key="tbSearch" TargetType="TextBox">
         <Setter Property="BorderThickness" Value="1 1 1 1"/>
 
@@ -287,12 +288,12 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style x:Key="tbInner" TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="MinWidth" Value="50"/>
-      
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -316,13 +317,13 @@
                             </TextBlock.Style>
                         </TextBlock>
                         <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                    </Border>
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        
+
     </Style>
     <Style x:Key="dtpInner" TargetType="{x:Type DatePicker}">
         <Setter Property="Foreground" Value="#FF333333"/>
@@ -332,7 +333,7 @@
         <Setter Property="Padding" Value="2"/>
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="MinWidth" Value="50"/>
-        
+
         <Setter Property="BorderBrush">
             <Setter.Value>
                 <LinearGradientBrush EndPoint=".5,0" StartPoint=".5,1">
@@ -468,30 +469,11 @@
                                         <Setter Property="Control.Template">
                                             <Setter.Value>
                                                 <ControlTemplate>
-                                                     <!--here-->
-                                                    <Grid>
-                                                    <TextBlock IsHitTestVisible="False" 
-                                       Text="{Binding Tag,ElementName=PART_TextBox}"
-                                       FontSize="13" FontWeight="ExtraLight">
-
-
-                                                        <TextBlock.Style>
-                                                            <Style TargetType="TextBlock">
-                                                                <Setter Property="Visibility" Value="Hidden"/>
-                                                                <Style.Triggers>
-                                                                    <DataTrigger Binding="{Binding Text,RelativeSource={RelativeSource TemplatedParent}}" Value="">
-                                                                        <Setter Property="Visibility" Value="Visible"/>
-                                                                    </DataTrigger>
-                                                                </Style.Triggers>
-                                                            </Style>
-
-                                                        </TextBlock.Style>
-
-
-                                                    </TextBlock>
-                                                    <TextBox Width="100" x:Name="PART_TextBox" BorderThickness="0 0 0 0" Background="Transparent"  Tag="Введите дату:"
+                                                    <!--here-->
+                                                    
+                                                        <TextBox Width="100" Style="{StaticResource tbInner}" x:Name="PART_TextBox" BorderThickness="0 0 0 0" Background="Transparent"  Tag="Введите дату:"
                                     Text="{Binding Path=SelectedDate,StringFormat='dd/MM/yyyy', RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
-                                                    </Grid>
+                                                   
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>

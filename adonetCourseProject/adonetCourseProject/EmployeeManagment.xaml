@@ -90,7 +90,7 @@
                         <GridViewColumn  Header="Дата рождения">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <DatePicker  Name="dpDate" Text="{Binding DateView}" Background="Transparent" BorderThickness="0" Style="{StaticResource dtpInner}"/>
+                                <DatePicker  Name="dpDate" Text="{Binding DateView}" Style="{StaticResource dtpInner}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

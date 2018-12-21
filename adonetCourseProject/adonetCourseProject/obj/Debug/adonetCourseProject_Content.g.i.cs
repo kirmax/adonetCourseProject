@@ -8,23 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/analysis.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/close.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/coming_document.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/document.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/documentx32.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/exam.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/examx24.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/file.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/info.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/menu_button.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/pencil.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/pencil_over.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/progress.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/research.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/search.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/settings.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/statistics.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/user.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/loading.gif")]
 
 

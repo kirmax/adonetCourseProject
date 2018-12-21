@@ -84,8 +84,14 @@
     </Compile>
     <Compile Include="PurchaseRepository.cs" />
     <Compile Include="Shipment.cs" />
+    <Compile Include="Shipmentcontrol.xaml.cs">
+      <DependentUpon>Shipmentcontrol.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Supplier.cs" />
     <Compile Include="Warehouse.cs" />
+    <Compile Include="Warehousecontrol.xaml.cs">
+      <DependentUpon>Warehousecontrol.xaml</DependentUpon>
+    </Compile>
     <Page Include="Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +119,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Purchasecontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shipmentcontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Warehousecontrol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\editbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

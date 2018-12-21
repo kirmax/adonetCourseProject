@@ -20,9 +20,11 @@ namespace adonetCourseProject
             context.Employees.Add(new Employee { FirstName = "Denis", Salary = 3000, Reward = 2, Birthdate = DateTime.Parse("1967/04/15").Date, Account = null, Position = new Position { Name = "WarehouseWorker"} });
             context.Employees.Add(new Employee { FirstName = "Kirill", Salary = 1500, Reward = 1, Birthdate = DateTime.Parse("1945/04/15").Date, Account = null,/*Photo = Employee.GetImageBytes(@"C:\Users\rudni\OneDrive\Рабочий стол\сомонеразвите.jpg"),*/ Position = new Position { Name = "Director" } });
 
-           // context.Purchases.Add(new Purchase { Quantity = 5, DatePurchased = DateTime.Now, DateShiped = DateTime.Now, Product = new Product { Name = "Banana", Price = 1000, Weight = 500 }, Supplier = new Supplier { CompanyName = "kek", ContactName = "kek", Phone = "0404044040" } });
+            context.Purchases.Add(new Purchase { Quantity = 5, DatePurchased = DateTime.Now, DateShiped = DateTime.Now, Product = new Product { Name = "Banana", Price = 1000, Weight = 500 }, Supplier = new Supplier { CompanyName = "kek", ContactName = "kek", Phone = "0404044040" } });
 
+            context.Shipments.Add(new Shipment { Quantity = 5,ShipmentDate = DateTime.Now, Product = new Product { Name = "Banana", Price = 1000, Weight = 500 }, Customer = new Customer { CompanyName = "kek", ContactName = "kek", Phone = "0404044040" } });
 
+            context.Warehouse.Add(new Warehouse { Product = new Product { Name = "Banana", Price = 1000, Weight = 500 }, Quantity = 5 });
             context.SaveChanges();
             
         }

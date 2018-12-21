@@ -21,23 +21,22 @@ namespace adonetCourseProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-       // public List<Purchase> Purchases { get; set; } = new List<Purchase>();
+
+        public List<Warehouse> Warehouses { get; set; } = new List<Warehouse>();
         public MainWindow(Employee employee)
         {
 
             InitializeComponent();
-            //DatabaseContext ctx = new DatabaseContext();
-            EmployeeRepository instance = EmployeeRepository.GetInstance();
-            var employees = instance.GetAll();
-            EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
-            /*Purchases = ctx.Purchases.ToList();
+            DatabaseContext ctx = new DatabaseContext();
+            //EmployeeRepository instance = EmployeeRepository.GetInstance();
+            //var employees = instance.GetAll();
+            //EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
+            Warehouses = ctx.Warehouse.ToList();
 
-            lvPurchases.ItemsSource = Purchases;*/
+            lvShipment.ItemsSource = Warehouses;
 
-           
-            
-            
+
+
 
 
 
@@ -61,11 +60,29 @@ namespace adonetCourseProject
             }
         }
 
-      /*  private void tvProduct_Expanded(object sender, RoutedEventArgs e)
+        private void tvProduct_Expanded(object sender, RoutedEventArgs e)
         {
-                      ((GridView)lvPurchases.View).Columns.Where(h => h.Header.Equals("Поставщик")).First().Width = 160;
-            
-        }*/
+
+            foreach (GridViewColumn c in ((GridView)lvShipment.View).Columns)
+            {
+                if (double.IsNaN(c.Width))
+                {
+                    c.Width = c.ActualWidth;
+                }
+                c.Width = double.NaN;
+            }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Shipment currentItem = lvShipment.SelectedItem as Shipment;
+            if ((sender as TextBox).Text != String.Empty && currentItem != null)
+            {
+                currentItem.Price = currentItem.Product.Price * currentItem.Quantity;
+                (((GridView)lvShipment.View).Columns[1].CellTemplate.LoadContent() as TextBox).Text = currentItem.Price.ToString();
+            }
+           
+        }
     }
 
 

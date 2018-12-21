@@ -16,18 +16,18 @@ using System.Windows.Shapes;
 namespace adonetCourseProject
 {
     /// <summary>
-    /// Логика взаимодействия для Purchasecontrol.xaml
+    /// Логика взаимодействия для Warehousecontrol.xaml
     /// </summary>
-    public partial class Purchasecontrol : UserControl
+    public partial class Warehousecontrol : UserControl
     {
-        public Purchasecontrol()
+        public Warehousecontrol()
         {
             InitializeComponent();
         }
         private void tvProduct_Expanded(object sender, RoutedEventArgs e)
         {
 
-            foreach (GridViewColumn c in ((GridView)lvPurchases.View).Columns)
+            foreach (GridViewColumn c in ((GridView)lvShipment.View).Columns)
             {
                 if (double.IsNaN(c.Width))
                 {
@@ -37,5 +37,4 @@ namespace adonetCourseProject
             }
         }
     }
-    
 }

@@ -27,16 +27,17 @@
             <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     TextBlock.TextAlignment="Center"
-                    Margin="10 2 10 40">
+                    Margin="20.333,2,19.667,-5.667" Height="250">
                 <TextBlock Text="Пожалуйста авторизуйтесь" FontSize="18" FontStyle="Italic" Foreground="#FF0700DB" FontWeight="Thin" Margin="10 10 10 20 "/>
                 <TextBox Style="{StaticResource tbAuthorization}" Tag="Логин" Name="tbLogin" Width="270" Height="40" FontSize="22" BorderBrush="#FF0700DB"/>
                 <TextBox Style="{StaticResource tbAuthorization}" Tag="Пароль" Name="pbPassword" Width="270" Height="40"  FontSize="22" BorderBrush="#FF0700DB"/>
 
-                <Button Style="{StaticResource btnEnter}" Name="btnLogin" Content="Войти"  Click="btnLogin_Click" Height="50" Width="190" FontStyle="Italic" FontSize="24" FontWeight="ExtraBold" Background="#FF004462" Margin="10 40 0 0">
+                <Button Style="{StaticResource btnEnter}" Name="btnLogin" Content="Войти"  Click="btnLogin_Click" Height="50" Width="190" FontStyle="Italic" FontSize="24" FontWeight="ExtraBold" Background="#FF004462" Margin="0 40 0 0">
                     <Button.Effect>
                         <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
                     </Button.Effect>
                 </Button>
+                <MediaElement MediaEnded="gif_MediaEnded" Width="50" x:Name="gif" UnloadedBehavior="Manual" Source="C:\Users\rudni\OneDrive\Рабочий стол\Proj\past commit\adonetCourseProject\adonetCourseProject\adonetCourseProject\images\Loading.gif" LoadedBehavior="Play" Stretch="Fill"/>
             </StackPanel>
         </Border>
 

@@ -77,6 +77,12 @@ namespace adonetCourseProject
             });
           // await Task.Run(new Action(() => ThreadParams(tbLogin.Text, pbPassword.Text)));
         }
+
+        private void gif_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            gif.Position = new TimeSpan(0, 0, 1);
+            gif.Play();
+        }
     }
 
 }
