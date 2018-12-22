@@ -56,7 +56,7 @@ namespace adonetCourseProject
                         Account account = ctx.Accounts.Where(a => a.Login == acc.Login && a.Password == pswdHashed).First();
                         Employee employee = ctx.Employees.Where(em => em.Account.Id == account.Id).First();
 
-
+                        
                         Dispatcher.Invoke(new Action(() =>
                         {
                             MainWindow mw = new MainWindow(employee);
@@ -78,11 +78,7 @@ namespace adonetCourseProject
           // await Task.Run(new Action(() => ThreadParams(tbLogin.Text, pbPassword.Text)));
         }
 
-        private void gif_MediaEnded(object sender, RoutedEventArgs e)
-        {
-            gif.Position = new TimeSpan(0, 0, 1);
-            gif.Play();
-        }
+      
     }
 
 }

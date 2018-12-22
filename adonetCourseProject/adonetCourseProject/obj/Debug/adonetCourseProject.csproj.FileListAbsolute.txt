@@ -109,3 +109,36 @@ D:\Программирование\C#\adonetCourseProject\adonetCourseProject\a
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Warehousecontrol.g.cs
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Shipmentcontrol.baml
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Warehousecontrol.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\adonetCourseProject.exe.config
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\adonetCourseProject.exe
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\adonetCourseProject.pdb
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\EntityFramework.dll
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\EntityFramework.xml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Authorization.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\EmployeeManagment.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\MainWindow.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Purchasecontrol.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Shipmentcontrol.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Warehousecontrol.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\App.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject_MarkupCompile.cache
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject_MarkupCompile.lref
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Authorization.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Dictionary.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\EmployeeManagment.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\MainWindow.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Purchasecontrol.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Shipmentcontrol.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Warehousecontrol.baml
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.g.resources
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.Properties.Resources.resources
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csproj.GenerateResource.Cache
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csproj.CoreCompileInputs.cache
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.exe
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.pdb
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject.csprojResolveAssemblyReference.cache
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\ChangePassword.g.cs
+C:\Users\rudni\OneDrive\Рабочий стол\Proj\MaximCommit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\ChangePassword.baml

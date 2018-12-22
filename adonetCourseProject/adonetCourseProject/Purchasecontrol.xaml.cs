@@ -43,6 +43,7 @@ namespace adonetCourseProject
         private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             (sender as TextBox).IsReadOnly = false;
+           
         }
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
@@ -74,8 +75,17 @@ namespace adonetCourseProject
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            instance.Update(lvPurchases.SelectedItem as Purchase);
-            lvPurchases.ItemsSource = instance.GetAll();
+            try
+            {
+                instance.Update(lvPurchases.SelectedItem as Purchase);
+                lvPurchases.ItemsSource = instance.GetAll();
+            }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Select item to save", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
     }
     

@@ -9,7 +9,7 @@ namespace adonetCourseProject
 {
     class PurchaseRepository : IRepository<Purchase>
     {
-        private DatabaseContext ctx;
+        private DatabaseContext ctx = new DatabaseContext();
 
         static PurchaseRepository instance = null;
 
@@ -72,18 +72,19 @@ namespace adonetCourseProject
         {
             using (ctx = new DatabaseContext())
             {
-                Purchase purchase = ctx.Purchases.Find(item.Id - 1);
+
+                Purchase purchase = ctx.Purchases.Find(item.Id);
                 if (purchase != null)
                 {
+
                     purchase.Price = item.Price;
-                    purchase.Product = item.Product;
                     purchase.Quantity = item.Quantity;
                     purchase.DatePurchased = item.DatePurchased;
                     purchase.DateShiped = item.DateShiped;
                     purchase.DeliveryCompany = item.DeliveryCompany;
-                    purchase.Supplier = item.Supplier;
 
-
+                    //purchase.Supplier = item.Supplier == null ? new Supplier() : purchase.Supplier = item.Supplier;
+                    //purchase.Product = item.Product == null ? new Product() : purchase.Product = item.Product;
 
                     ctx.Entry(purchase).State = EntityState.Modified;
                     ctx.SaveChanges();
