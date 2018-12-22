@@ -20,10 +20,13 @@ namespace adonetCourseProject
     /// </summary>
     public partial class Shipmentcontrol : UserControl
     {
+        ShipmentRepository instance = ShipmentRepository.GetInstance();
         public Shipmentcontrol()
         {
             InitializeComponent();
+            lvShipment.ItemsSource = instance.GetAll();
         }
+
         private void tvProduct_Expanded(object sender, RoutedEventArgs e)
         {
 
@@ -35,6 +38,44 @@ namespace adonetCourseProject
                 }
                 c.Width = double.NaN;
             }
+        }
+
+        private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            (sender as TextBox).IsReadOnly = false;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            (sender as TextBox).IsReadOnly = true;
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            instance.Create(new Shipment { ShipmentDate = DateTime.Now });
+            lvShipment.ItemsSource = instance.GetAll();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                instance.Delete((lvShipment.SelectedItem as Shipment).Id);
+                lvShipment.ItemsSource = instance.GetAll();
+
+            }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Select item to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            instance.Update(lvShipment.SelectedItem as Shipment);
+            lvShipment.ItemsSource = instance.GetAll();
         }
     }
 }

@@ -25,13 +25,13 @@
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
             <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
-            <Button  Name="btnAdd" Style="{DynamicResource btnadd}">
+            <Button  Name="btnAdd" Style="{DynamicResource btnadd}" Click="btnAdd_Click">
 
             </Button>
-            <Button Name="btnDelete" Style="{StaticResource btndelete}">
+            <Button Name="btnDelete" Style="{StaticResource btndelete}" Click="btnDelete_Click">
 
             </Button>
-            <Button Name="btnEdit" Style="{StaticResource btnedit}">
+            <Button Name="btnEdit" Style="{StaticResource btnedit}" Click="btnEdit_Click">
 
             </Button>
         </StackPanel>
@@ -59,15 +59,15 @@
                                             <StackPanel >
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Цена:"/>
-                                                    <TextBox Text="{Binding Product.Price}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Product.Price}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Вес:"/>
-                                                    <TextBox Text="{Binding Product.Weight}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Product.Weight}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="Описание:"/>
-                                                    <TextBox Text="{Binding Product.Description}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Product.Description}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </TreeViewItem>
@@ -82,14 +82,14 @@
                         <GridViewColumn.CellTemplate>
 
                             <DataTemplate>
-                                <TextBox Text="{Binding Price}" Style="{StaticResource tbInner}"/>
+                                <TextBox Text="{Binding Price}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn  Header="Количество">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBox Text="{Binding Quantity}" Style="{StaticResource tbInner}"/>
+                                <TextBox Text="{Binding Quantity}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -112,7 +112,7 @@
                     <GridViewColumn  Header="Доставщик">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBox Text="{Binding DeliveryCompany}" Style="{StaticResource tbInner}"/>
+                                <TextBox Text="{Binding DeliveryCompany}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -129,24 +129,24 @@
                                             <StackPanel >
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Контактное имя:"/>
-                                                    <TextBox Text="{Binding Product.ContactName}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Product.ContactName}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Адрес:"/>
-                                                    <TextBox Text="{Binding Product.Address}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Product.Address}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Телефон:"/>
-                                                    <TextBox Text="{Binding Product.Phone}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Product.Phone}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Email:"/>
-                                                    <TextBox Text="{Binding Product.Email}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Product.Email}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="Описание:"/>
-                                                    <TextBox Text="{Binding Product.Description}" Style="{StaticResource tbInner}"/>
+                                                    <TextBox Text="{Binding Product.Description}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </TreeViewItem>

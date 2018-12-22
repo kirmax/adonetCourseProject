@@ -29,82 +29,31 @@ namespace adonetCourseProject
             var employees = instance.GetAll();
             lvEmployee.ItemsSource = employees;
 
-            // TextBoxesIsReadOnly(true);
-
-            var a = ((GridView)lvEmployee.View).Columns[1].CellTemplate.LoadContent() as TextBox;
-            a.IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[2].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-
-            (((GridView)lvEmployee.View).Columns[3].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[4].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[5].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-
-            (((GridView)lvEmployee.View).Columns[6].CellTemplate.LoadContent() as DatePicker).IsHitTestVisible = false;
-            (((GridView)lvEmployee.View).Columns[7].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[8].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[9].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[10].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-
-
-        }
-
-        private void BtnEdit_ClickToEdit(object sender, RoutedEventArgs e)
-        {
-
-            //TextBoxesIsReadOnly(false);
-            (((GridView)lvEmployee.View).Columns[1].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-
-            (((GridView)lvEmployee.View).Columns[2].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-
-            (((GridView)lvEmployee.View).Columns[3].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-            (((GridView)lvEmployee.View).Columns[4].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-            (((GridView)lvEmployee.View).Columns[5].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-
-            (((GridView)lvEmployee.View).Columns[6].CellTemplate.LoadContent() as DatePicker).IsHitTestVisible = true;
-            (((GridView)lvEmployee.View).Columns[7].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-            (((GridView)lvEmployee.View).Columns[8].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-            (((GridView)lvEmployee.View).Columns[9].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-            (((GridView)lvEmployee.View).Columns[10].CellTemplate.LoadContent() as TextBox).IsReadOnly = false;
-
-             btnEdit.Click += BtnEdit_ClickToSubmit;
+            
 
 
         }
 
         private void BtnEdit_ClickToSubmit(object sender, RoutedEventArgs e)
         {
-            
+
 
             instance.Update(lvEmployee.SelectedItem as Employee);
-            //TextBoxesIsReadOnly(true);
-            (((GridView)lvEmployee.View).Columns[1].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-
-            (((GridView)lvEmployee.View).Columns[2].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-
-            (((GridView)lvEmployee.View).Columns[3].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[4].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[5].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-
-            (((GridView)lvEmployee.View).Columns[6].CellTemplate.LoadContent() as DatePicker).IsHitTestVisible = false;
-            (((GridView)lvEmployee.View).Columns[7].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[8].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[9].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-            (((GridView)lvEmployee.View).Columns[10].CellTemplate.LoadContent() as TextBox).IsReadOnly = true;
-
-            btnEdit.Click += BtnEdit_ClickToEdit;
 
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if(lvEmployee.SelectedIndex != -1)
-            { 
-            instance.Delete(lvEmployee.SelectedIndex + 1);
-            lvEmployee.ItemsSource = instance.GetAll();
-            }
-            else
+            try
             {
-                MessageBox.Show("Error", "Select employee to delete");
+                instance.Delete((lvEmployee.SelectedItem as Employee).Id);
+                lvEmployee.ItemsSource = instance.GetAll();
+            
+            }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Select item to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }
@@ -117,21 +66,20 @@ namespace adonetCourseProject
 
         }
 
-        private void TextBoxesIsReadOnly(bool mode)
+        private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            (((GridView)lvEmployee.View).Columns[1].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
-
-            (((GridView)lvEmployee.View).Columns[2].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
-
-            (((GridView)lvEmployee.View).Columns[3].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
-            (((GridView)lvEmployee.View).Columns[4].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
-            (((GridView)lvEmployee.View).Columns[5].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
-            
-            (((GridView)lvEmployee.View).Columns[6].CellTemplate.LoadContent() as DatePicker).IsHitTestVisible = !mode;
-            (((GridView)lvEmployee.View).Columns[7].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
-            (((GridView)lvEmployee.View).Columns[8].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
-            (((GridView)lvEmployee.View).Columns[9].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
-            (((GridView)lvEmployee.View).Columns[10].CellTemplate.LoadContent() as TextBox).IsReadOnly = mode;
+            (sender as TextBox).IsReadOnly = false;
         }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            (sender as TextBox).IsReadOnly = true;
+
+        }
+
+
+       
+
+        
     }
 }

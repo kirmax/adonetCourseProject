@@ -20,14 +20,18 @@ namespace adonetCourseProject
     /// </summary>
     public partial class Warehousecontrol : UserControl
     {
+        WarehouseRepository instance = WarehouseRepository.GetInstance();
         public Warehousecontrol()
         {
             InitializeComponent();
+
+            lvWarehouse.ItemsSource = instance.GetAll();
         }
+
         private void tvProduct_Expanded(object sender, RoutedEventArgs e)
         {
 
-            foreach (GridViewColumn c in ((GridView)lvShipment.View).Columns)
+            foreach (GridViewColumn c in ((GridView)lvWarehouse.View).Columns)
             {
                 if (double.IsNaN(c.Width))
                 {
@@ -35,6 +39,45 @@ namespace adonetCourseProject
                 }
                 c.Width = double.NaN;
             }
+        }
+
+        private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            (sender as TextBox).IsReadOnly = false;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            (sender as TextBox).IsReadOnly = true;
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            instance.Create(new Warehouse());
+            lvWarehouse.ItemsSource = instance.GetAll();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                instance.Delete((lvWarehouse.SelectedItem as Warehouse).Id);
+                lvWarehouse.ItemsSource = instance.GetAll();
+            
+            }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Select item to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            instance.Update(lvWarehouse.SelectedItem as Warehouse);
+            lvWarehouse.ItemsSource = instance.GetAll();
         }
     }
 }

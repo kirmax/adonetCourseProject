@@ -55,13 +55,13 @@ namespace adonetCourseProject
         {
             using (ctx = new DatabaseContext())
             {
-                Purchase purchase = ctx.Purchases.Find(id);
+                Purchase purchaseToDelete = ctx.Purchases.Find(id);
 
-                if (purchase != null)
+                if (purchaseToDelete != null)
                 {
-                    ctx.Purchases.Remove(purchase);
+                    ctx.Purchases.Remove(purchaseToDelete);
 
-                    ctx.Entry(purchase).State = EntityState.Deleted;
+                    ctx.Entry(purchaseToDelete).State = EntityState.Deleted;
                     ctx.SaveChanges();
                 }
 
@@ -70,20 +70,24 @@ namespace adonetCourseProject
 
         public void Update(Purchase item)
         {
-            Purchase purchase = ctx.Purchases.Find(item.Id);
-            if (purchase != null)
+            using (ctx = new DatabaseContext())
             {
-                purchase.Price = item.Price;
-                purchase.Product = item.Product;
-                purchase.Quantity = item.Quantity;
-                purchase.DatePurchased = item.DatePurchased;
-                purchase.DateShiped = item.DateShiped;
-                purchase.DeliveryCompany = item.DeliveryCompany;
-                purchase.Supplier = item.Supplier;
-                
+                Purchase purchase = ctx.Purchases.Find(item.Id - 1);
+                if (purchase != null)
+                {
+                    purchase.Price = item.Price;
+                    purchase.Product = item.Product;
+                    purchase.Quantity = item.Quantity;
+                    purchase.DatePurchased = item.DatePurchased;
+                    purchase.DateShiped = item.DateShiped;
+                    purchase.DeliveryCompany = item.DeliveryCompany;
+                    purchase.Supplier = item.Supplier;
 
-                ctx.Entry(purchase).State = EntityState.Modified;
-                ctx.SaveChanges();
+
+
+                    ctx.Entry(purchase).State = EntityState.Modified;
+                    ctx.SaveChanges();
+                }
             }
         }
     }

@@ -105,3 +105,7 @@ C:\Users\rudni\OneDrive\Рабочий стол\Proj\past commit\adonetCoursePro
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\past commit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Shipmentcontrol.baml
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\past commit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Warehousecontrol.g.cs
 C:\Users\rudni\OneDrive\Рабочий стол\Proj\past commit\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Warehousecontrol.baml
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Shipmentcontrol.g.cs
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Warehousecontrol.g.cs
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Shipmentcontrol.baml
+D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Warehousecontrol.baml

@@ -29,7 +29,7 @@
                 <Button Name="btnDelete" Style="{StaticResource btndelete}" Click="BtnDelete_Click">
 
                 </Button>
-                <Button Name="btnEdit" Style="{StaticResource btnedit}" >
+                <Button Name="btnEdit" Style="{StaticResource btnedit}" Click="BtnEdit_ClickToSubmit" >
 
                 </Button>
             </StackPanel>
@@ -53,21 +53,21 @@
                             <GridViewColumn.CellTemplate>
                                     
                                 <DataTemplate>
-                                    <TextBox  Text="{Binding MiddleName}" Name="tbMidName" Style="{StaticResource tbInner}"/>
+                                    <TextBox  Text="{Binding MiddleName}" Name="tbMidName" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Имя">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox  Name="tbFirstName" Text="{Binding FirstName}" Style="{StaticResource tbInner}"/>
+                                <TextBox  Name="tbFirstName" Text="{Binding FirstName}" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn  Header="Фамилия">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox   Name="tbLastName" Text="{Binding LastName}" Style="{StaticResource tbInner}"/>
+                                <TextBox   Name="tbLastName" Text="{Binding LastName}" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -75,7 +75,7 @@
                         <GridViewColumn  Header="Адрес">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox   Name="tbAdress" Text="{Binding Address}" Style="{StaticResource tbInner}"/>
+                                <TextBox   Name="tbAdress" Text="{Binding Address}" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -83,7 +83,7 @@
                         <GridViewColumn  Header="Телефон">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox  Name="tbPhone" Text="{Binding Phone}" Style="{StaticResource tbInner}"/>
+                                <TextBox  Name="tbPhone" Text="{Binding Phone}" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -97,7 +97,7 @@
                         <GridViewColumn  Header="Почта">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox  Name="tbEmail" Text="{Binding Email}" Style="{StaticResource tbInner}"/>
+                                <TextBox  Name="tbEmail" Text="{Binding Email}" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -105,7 +105,7 @@
                         <GridViewColumn  Header="Зарплата">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox  Name="tbSalary" Text="{Binding Salary}" Style="{StaticResource tbInner}"/>
+                                <TextBox  Name="tbSalary" Text="{Binding Salary}" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -113,7 +113,7 @@
                         <GridViewColumn  Header="Премия">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox  Name="tbReward" Text="{Binding Reward}" Style="{StaticResource tbInner}"/>
+                                <TextBox  Name="tbReward" Text="{Binding Reward}" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -121,7 +121,7 @@
                         <GridViewColumn  Header="Должность">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <TextBox  Name="tbPosition" Text="{Binding Position.Name}" Style="{StaticResource tbInner}"/>
+                                <TextBox  Name="tbPosition" Text="{Binding Position.Name}" Style="{StaticResource tbInner}" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

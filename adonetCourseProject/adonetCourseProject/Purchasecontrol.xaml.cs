@@ -20,10 +20,13 @@ namespace adonetCourseProject
     /// </summary>
     public partial class Purchasecontrol : UserControl
     {
+        PurchaseRepository instance = PurchaseRepository.GetInstance();
         public Purchasecontrol()
         {
             InitializeComponent();
+            lvPurchases.ItemsSource = instance.GetAll();
         }
+
         private void tvProduct_Expanded(object sender, RoutedEventArgs e)
         {
 
@@ -35,6 +38,44 @@ namespace adonetCourseProject
                 }
                 c.Width = double.NaN;
             }
+        }
+
+        private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            (sender as TextBox).IsReadOnly = false;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            (sender as TextBox).IsReadOnly = true;
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            instance.Create(new Purchase { DatePurchased = DateTime.Now, DateShiped = DateTime.Now });
+            lvPurchases.ItemsSource = instance.GetAll();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                instance.Delete((lvPurchases.SelectedItem as Purchase).Id);
+                lvPurchases.ItemsSource = instance.GetAll();
+
+            }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Select item to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            instance.Update(lvPurchases.SelectedItem as Purchase);
+            lvPurchases.ItemsSource = instance.GetAll();
         }
     }
     

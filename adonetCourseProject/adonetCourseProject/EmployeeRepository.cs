@@ -55,13 +55,13 @@ namespace adonetCourseProject
         {
             using (ctx = new DatabaseContext())
             {
-                Employee employee = ctx.Employees.Find(id);
+                Employee employeeToDelete = ctx.Employees.Find(id);
 
-                if (employee != null)
+                if (employeeToDelete != null)
                 {
-                    ctx.Employees.Remove(employee);
+                    ctx.Employees.Remove(employeeToDelete);
 
-                    ctx.Entry(employee).State = EntityState.Deleted;
+                    ctx.Entry(employeeToDelete).State = EntityState.Deleted;
                     ctx.SaveChanges();
                 }
                     

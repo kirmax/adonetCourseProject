@@ -87,11 +87,13 @@
     <Compile Include="Shipmentcontrol.xaml.cs">
       <DependentUpon>Shipmentcontrol.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ShipmentRepository.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="Warehouse.cs" />
     <Compile Include="Warehousecontrol.xaml.cs">
       <DependentUpon>Warehousecontrol.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WarehouseRepository.cs" />
     <Page Include="Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
