@@ -37,7 +37,7 @@
                         <DropShadowEffect BlurRadius="3" ShadowDepth="2"/>
                     </Button.Effect>
                 </Button>
-                <MediaElement MediaEnded="gif_MediaEnded" Width="50" x:Name="gif" UnloadedBehavior="Manual" Source="C:\Users\rudni\OneDrive\Рабочий стол\Proj\past commit\adonetCourseProject\adonetCourseProject\adonetCourseProject\images\Loading.gif" LoadedBehavior="Play" Stretch="Fill"/>
+                <MediaElement MediaEnded="gif_MediaEnded" Width="50" x:Name="gif" UnloadedBehavior="Manual" Source="D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\images\Loading.gif" LoadedBehavior="Play" Stretch="Fill"/>
             </StackPanel>
         </Border>
 
