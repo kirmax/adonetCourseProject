@@ -34,7 +34,6 @@ D:\Программирование\C#\adonetCourseProject\adonetCourseProject\a
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\EmployeeManagment.g.cs
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\MainWindow.g.cs
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\App.g.cs
-D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject_MarkupCompile.cache
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\adonetCourseProject_MarkupCompile.lref
 D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\obj\Debug\Authorization.baml

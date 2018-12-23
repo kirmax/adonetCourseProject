@@ -63,7 +63,7 @@ namespace adonetCourseProject
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
 
-            instance.Create(new Employee { Position = new Position() });
+            instance.Create(new Employee { Position = new Position(), Birthdate = DateTime.Now });
             lvEmployee.ItemsSource = instance.GetAll();
 
         }
@@ -104,9 +104,10 @@ namespace adonetCourseProject
         {
             var Photo = sender as Button;
             if (Photo.Content == null)
-            {
                 Photo.Content = @"\images\photobtn.png";
-            }
+
         }
+
+        
     }
 }
