@@ -22,96 +22,34 @@
         
 
         <StackPanel Grid.RowSpan="2" Panel.ZIndex="1" HorizontalAlignment="Left" Style="{StaticResource spSlideLeft}"  Width="200" x:Name="spLeft" Background="#FF016E9D" Margin="-150,0,0,0">
-            <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label Name="lblPurchases" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Width="140" Content="Отдел закупок" VerticalAlignment="Center" FontFamily="Source Sans Pro" IsEnabled="False"/>
-                <Image Margin="10 0 0 0" Width="30" Height="30"  Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
+            <DockPanel  Name="dpPurchases" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
+                <Label Name="lblPurchases" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Width="140" Content="Отдел закупок" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
+                <Image Margin="10 0 0 0" Width="30" Height="30" Source="/images/purchases.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
             </DockPanel>
 
-            <DockPanel   VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label Name="lblEmployees" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Отдел кадров" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" IsEnabled="False"/>
+            <DockPanel  Name="dpEmployees"  Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
+                <Label Name="lblEmployees" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Отдел кадров" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
                 <Image Margin="10 0 0 0" Width="30" Height="30" Source="/images/employeement.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
             </DockPanel>
-            <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label Name="lblShipments" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Отдел продаж" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" IsEnabled="False"/>
-                <Image Margin="10 0 0 0" Width="30" Height="30" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
+            <DockPanel  Name="dpShipments" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
+                <Label Name="lblShipments" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Отдел продаж" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
+                <Image Margin="10 0 0 0" Width="30" Height="30" Source="/images/shipment.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
             </DockPanel>
-            <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label Name="lblWarehouse" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Склад" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" IsEnabled="False"/>
-                <Image Margin="10 0 0 0" Width="30" Height="30" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
+            <DockPanel Name="dpWarehouse" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
+                <Label Name="lblWarehouse" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Склад" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
+                <Image Margin="10 0 0 0" Width="30" Height="30" Source="/images/warehouse.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
+            </DockPanel>
+            <DockPanel Name="dpExit"  VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
+                <Label Name="lblExit" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Выход" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
+                <Image Margin="10 0 0 0" Width="30" Height="30" Source="/images/exit.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
             </DockPanel>
 
         </StackPanel>
-        <!--
-        <ListView Grid.Row="1" x:Name="lvShipment" Margin="50,0,0,0" FontStyle="Italic" >
-           
-
-            <ListView.View>
-                <GridView >
-                    <GridViewColumn  Header="Продукт">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-
-
-                                    <TreeView BorderThickness="0" Background="Transparent">
-
-
-                                        <TreeViewItem Name="tviProduct" Expanded="tvProduct_Expanded" Header="{Binding Product.Name}">
-
-                                            <StackPanel >
-                                                <StackPanel  Orientation="Horizontal">
-                                                    <TextBlock Text="Цена:"/>
-                                                    <TextBox Text="{Binding Product.Price}" Style="{StaticResource tbInner}"/>
-                                                </StackPanel>
-                                                <StackPanel  Orientation="Horizontal">
-                                                    <TextBlock Text="Вес:"/>
-                                                    <TextBox Text="{Binding Product.Weight}" Style="{StaticResource tbInner}"/>
-                                                </StackPanel>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="Описание:"/>
-                                                    <TextBox Text="{Binding Product.Description}" Style="{StaticResource tbInner}"/>
-                                                </StackPanel>
-                                            </StackPanel>
-                                        </TreeViewItem>
-                                    </TreeView>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-
-
-                    <GridViewColumn  Header="Количество">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox  Text="{Binding Quantity}" Style="{StaticResource tbInner}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
--->
-
-        <!--<StackPanel Grid.RowSpan="3">
-            <local:EmployeeManagment x:Name="ucEmployeeManagment"  />
-        </StackPanel>-->
-
-        <!--<StackPanel Grid.RowSpan="3">
-            <local:Warehousecontrol x:Name="ucWarehouse"  />
-        </StackPanel>-->
-
-        <!--<StackPanel Grid.RowSpan="2">
-            <local:Shipmentcontrol x:Name="ucShipment"/>
-        </StackPanel>-->
-
-        <!--<StackPanel>
-            <local:Purchasecontrol x:Name="ucPurchase"/>
-        </StackPanel>-->
-
+        
     </Grid>
 
 

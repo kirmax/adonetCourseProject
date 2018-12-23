@@ -43,7 +43,7 @@
                     <GridViewColumn  Width="150" Header="Фото" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                <Button Name="btnPhoto" Loaded="Button_Loaded" Width="150" Content="{Binding Photo}" Style="{StaticResource btnPhoto}"/>
+                                <Button Click="Button_Click" Loaded="Button_Loaded" Width="150" Content="{Binding Photo}" Style="{StaticResource btnPhoto}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
