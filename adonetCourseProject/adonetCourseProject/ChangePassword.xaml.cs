@@ -52,7 +52,31 @@ namespace adonetCourseProject
                 return;
             }
             var pswdHashed = MD5Hash.GetMD5Hash(pbPassword.Text);
+            using (DatabaseContext ctx = new DatabaseContext())
+            {
+                var exists = ctx.Accounts.ToList().Where(a => a.Login == tbLogin.Text && a.Password == pswdHashed).Count() > 0;
 
+
+                if (exists)
+                {
+                    Account account = ctx.Accounts.Where(a => a.Login == tbLogin.Text && a.Password == pswdHashed).First();
+                    Employee employee = ctx.Employees.Where(em => em.Account.Id == account.Id).First();
+                    account.Password = MD5Hash.GetMD5Hash(pbТNewPassword.Text);
+                    ctx.SaveChanges();
+
+
+                    MainWindow mw = new MainWindow(employee);
+                    mw.Show();
+
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль", "Error");
+                }
+            }
+            /*
             ThreadPool.QueueUserWorkItem((args) =>
             {
                 var acc = args as Account;
@@ -89,7 +113,7 @@ namespace adonetCourseProject
             {
                 Login = tbLogin.Text,
                 Password = pbPassword.Text
-            });
+            });*/
 
 
 
