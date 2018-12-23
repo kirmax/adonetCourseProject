@@ -23,8 +23,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-            <TextBox Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}"/>
-            <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}"/>
+            <TextBox Name="tbSearch" Grid.Row="0" Margin="0 15" Width="250" Style="{StaticResource tbSearch}" TextChanged="tbSearch_TextChanged"/>
+            <Button Name="btnSearch"  Margin= "5 0 170 0" Style="{StaticResource btnTextbox}" Click="btnSearch_Click" />
             <Button  Name="btnAdd" Style="{DynamicResource btnadd}" Click="btnAdd_Click">
 
             </Button>
@@ -41,7 +41,7 @@
 
 
         <ListView Grid.Row="1" x:Name="lvPurchases" Margin="50,0,0,0" FontStyle="Italic" >
-
+          
 
             <ListView.View>
                 <GridView>
@@ -54,9 +54,13 @@
                                     <TreeView BorderThickness="0" Background="Transparent">
 
 
-                                        <TreeViewItem Name="tviProduct" Expanded="tvProduct_Expanded" Header="{Binding Product.Name}">
+                                        <TreeViewItem Name="tviProduct" Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbName,Path=Text}">
 
                                             <StackPanel >
+                                                <StackPanel  Orientation="Horizontal">
+                                                    <TextBlock Text="Название:"/>
+                                                    <TextBox Name="tbName" Text="{Binding Product.Name}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
+                                                </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Цена:"/>
                                                     <TextBox Text="{Binding Product.Price}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
@@ -124,9 +128,13 @@
                                     <TreeView BorderThickness="0" Background="Transparent" >
 
 
-                                        <TreeViewItem  Expanded="tvProduct_Expanded" Header="{Binding Product.CompanyName}" >
+                                        <TreeViewItem  Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbCName,Path=Text}" >
 
                                             <StackPanel >
+                                                <StackPanel  Orientation="Horizontal">
+                                                    <TextBlock  Text="Название:"/>
+                                                    <TextBox Name="tbCName" Text="{Binding Product.CompanyName}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
+                                                </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Контактное имя:"/>
                                                     <TextBox Text="{Binding Product.ContactName}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>

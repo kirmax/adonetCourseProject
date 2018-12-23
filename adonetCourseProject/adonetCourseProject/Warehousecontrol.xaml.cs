@@ -54,7 +54,7 @@ namespace adonetCourseProject
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            instance.Create(new Warehouse());
+            instance.Create(new Warehouse { Product = new Product() });
             lvWarehouse.ItemsSource = instance.GetAll();
         }
 
@@ -78,6 +78,21 @@ namespace adonetCourseProject
         {
             instance.Update(lvWarehouse.SelectedItem as Warehouse);
             lvWarehouse.ItemsSource = instance.GetAll();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            using (DatabaseContext ctx = new DatabaseContext())
+            {
+                var foundProducts = ctx.Warehouse.Where(p => p.Product.Name.IndexOf(tbSearch.Text) != -1).ToList();
+                lvWarehouse.ItemsSource = foundProducts;
+            }
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbSearch.Text == "")
+                lvWarehouse.ItemsSource = instance.GetAll();
         }
     }
 }

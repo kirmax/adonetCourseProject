@@ -9,7 +9,7 @@ namespace adonetCourseProject
 {
     class PurchaseRepository : IRepository<Purchase>
     {
-        private DatabaseContext ctx;
+        private DatabaseContext ctx = new DatabaseContext();
 
         static PurchaseRepository instance = null;
 
@@ -25,37 +25,33 @@ namespace adonetCourseProject
 
         public void Create(Purchase item)
         {
-            using (ctx = new DatabaseContext())
-            {
+            
                 ctx.Purchases.Add(item);
 
                 ctx.Entry(item).State = EntityState.Added;
                 ctx.SaveChanges();
-            }
+            
         }
 
         public Purchase Get(int id)
         {
-            using (ctx = new DatabaseContext())
-            {
-                return ctx.Purchases.Find(id);
-            }
+            
+                return ctx.Purchases.FirstOrDefault(p => p.Id == id);
+
 
         }
 
         public IEnumerable<Purchase> GetAll()
         {
-            using (ctx = new DatabaseContext())
-            {
+            
                 return ctx.Purchases.ToList();
-            }
+            
         }
 
         public void Delete(int id)
         {
-            using (ctx = new DatabaseContext())
-            {
-                Purchase purchaseToDelete = ctx.Purchases.Find(id);
+            
+                Purchase purchaseToDelete = Get(id);
 
                 if (purchaseToDelete != null)
                 {
@@ -65,30 +61,30 @@ namespace adonetCourseProject
                     ctx.SaveChanges();
                 }
 
-            }
+            
         }
 
         public void Update(Purchase item)
         {
-            using (ctx = new DatabaseContext())
-            {
-                Purchase purchase = ctx.Purchases.Find(item.Id - 1);
+            
+                Purchase purchase = Get(item.Id);
                 if (purchase != null)
                 {
+
                     purchase.Price = item.Price;
-                    purchase.Product = item.Product;
                     purchase.Quantity = item.Quantity;
                     purchase.DatePurchased = item.DatePurchased;
                     purchase.DateShiped = item.DateShiped;
                     purchase.DeliveryCompany = item.DeliveryCompany;
-                    purchase.Supplier = item.Supplier;
+                   
 
-
+                    purchase.Supplier =  item.Supplier;
+                    purchase.Product = item.Product;
 
                     ctx.Entry(purchase).State = EntityState.Modified;
                     ctx.SaveChanges();
                 }
-            }
+            
         }
     }
 }

@@ -9,7 +9,7 @@ namespace adonetCourseProject
 {
     class EmployeeRepository : IRepository<Employee>
     {
-        private DatabaseContext ctx;
+        private DatabaseContext ctx = new DatabaseContext();
 
         static EmployeeRepository instance = null;
 
@@ -25,37 +25,33 @@ namespace adonetCourseProject
 
         public void Create(Employee item)
         {
-            using (ctx = new DatabaseContext())
-            {
+            
                 ctx.Employees.Add(item);
 
                 ctx.Entry(item).State = EntityState.Added;
                 ctx.SaveChanges();
-            }
+            
         }
 
         public Employee Get(int id)
         {
-            using (ctx = new DatabaseContext())
-            {
-                return ctx.Employees.Find(id);
-            }
+
+            return ctx.Employees.FirstOrDefault(e => e.Id == id);
+            
 
         }
 
         public IEnumerable<Employee> GetAll()
         {
-            using (ctx = new DatabaseContext())
-            {
+            
                 return ctx.Employees.Include(e => e.Position).ToList();
-            }
+            
         }
 
         public void Delete(int id)
         {
-            using (ctx = new DatabaseContext())
-            {
-                Employee employeeToDelete = ctx.Employees.Find(id);
+            
+                Employee employeeToDelete = Get(id);
 
                 if (employeeToDelete != null)
                 {
@@ -65,14 +61,13 @@ namespace adonetCourseProject
                     ctx.SaveChanges();
                 }
                     
-            }
+            
         }
 
         public void Update(Employee item)
         {
-            using (ctx = new DatabaseContext())
-            { 
-                Employee employee = ctx.Employees.Find(item.Id - 1);
+            
+                Employee employee = Get(item.Id);
                 if (employee != null)
                 {
                     employee.Photo = item.Photo;
@@ -90,7 +85,7 @@ namespace adonetCourseProject
                     ctx.Entry(employee).State = EntityState.Modified;
                     ctx.SaveChanges();
                 }
-            }
+            
         }
     }
 }

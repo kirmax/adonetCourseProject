@@ -27,6 +27,7 @@ namespace adonetCourseProject
             pbPassword.Text = "ceo";
             tbLogin.Text = "ceo";
 
+            
         }
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -47,7 +48,7 @@ namespace adonetCourseProject
                 using (DatabaseContext ctx = new DatabaseContext())
                 {
 
-                    string pswdHashed = MD5Hash.GetMD5Hash(acc.Login);
+                    string pswdHashed = MD5Hash.GetMD5Hash(acc.Password);
                     var res = ctx.Accounts.ToList();
                     var exists = res.Where(a => a.Login == acc.Login && a.Password == pswdHashed).Count() > 0;
 
@@ -56,7 +57,7 @@ namespace adonetCourseProject
                         Account account = ctx.Accounts.Where(a => a.Login == acc.Login && a.Password == pswdHashed).First();
                         Employee employee = ctx.Employees.Where(em => em.Account.Id == account.Id).First();
 
-
+                        
                         Dispatcher.Invoke(new Action(() =>
                         {
                             MainWindow mw = new MainWindow(employee);
@@ -78,10 +79,10 @@ namespace adonetCourseProject
           // await Task.Run(new Action(() => ThreadParams(tbLogin.Text, pbPassword.Text)));
         }
 
-        private void gif_MediaEnded(object sender, RoutedEventArgs e)
+        private void lbPswdChange_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            gif.Position = new TimeSpan(0, 0, 1);
-            gif.Play();
+            ChangePassword wndChangePswd = new ChangePassword();
+            wndChangePswd.Show();
         }
     }
 

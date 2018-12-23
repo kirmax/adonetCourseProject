@@ -53,7 +53,7 @@ namespace adonetCourseProject
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            instance.Create(new Shipment { ShipmentDate = DateTime.Now });
+            instance.Create(new Shipment { ShipmentDate = DateTime.Now, Customer = new Customer(), Product = new Product()});
             lvShipment.ItemsSource = instance.GetAll();
         }
 
@@ -76,6 +76,21 @@ namespace adonetCourseProject
         {
             instance.Update(lvShipment.SelectedItem as Shipment);
             lvShipment.ItemsSource = instance.GetAll();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            using (DatabaseContext ctx = new DatabaseContext())
+            {
+                var foundShipments = ctx.Shipments.Where(fp => fp.Product.Name.IndexOf(tbSearch.Text) != -1).ToList();
+                lvShipment.ItemsSource = foundShipments;
+            }
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbSearch.Text == "")
+                lvShipment.ItemsSource = instance.GetAll();
         }
     }
 }

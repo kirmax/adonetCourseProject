@@ -10,7 +10,7 @@ namespace adonetCourseProject
     class ShipmentRepository : IRepository<Shipment>
     {
 
-        private DatabaseContext ctx;
+        private DatabaseContext ctx = new DatabaseContext();
 
         static ShipmentRepository instance = null;
 
@@ -25,19 +25,17 @@ namespace adonetCourseProject
 
         public void Create(Shipment item)
         {
-            using (ctx = new DatabaseContext())
-            {
+            
                 ctx.Shipments.Add(item);
 
                 ctx.Entry(item).State = EntityState.Added;
                 ctx.SaveChanges();
-            }
+            
         }
 
         public void Delete(int id)
         {
-            using (ctx = new DatabaseContext())
-            {
+           
                 Shipment shipmentToDelete = ctx.Shipments.Find(id);
 
                 if (shipmentToDelete != null)
@@ -48,29 +46,26 @@ namespace adonetCourseProject
                     ctx.SaveChanges();
                 }
 
-            }
+            
         }
 
         public Shipment Get(int id)
         {
-            using (ctx = new DatabaseContext())
-            {
-                return ctx.Shipments.Find(id);
-            }
+            
+                return ctx.Shipments.FirstOrDefault(s => s.Id == id);
+
         }
 
         public IEnumerable<Shipment> GetAll()
         {
-            using (ctx = new DatabaseContext())
-            {
+            
                 return ctx.Shipments.ToList();
-            }
+            
         }
 
         public void Update(Shipment item)
         {
-            using (ctx = new DatabaseContext())
-            {
+            
                 Shipment shipment = ctx.Shipments.FirstOrDefault(s => s.Id == item.Id);
                 if (shipment != null)
                 {
@@ -85,7 +80,7 @@ namespace adonetCourseProject
                     ctx.Entry(shipment).State = EntityState.Modified;
                     ctx.SaveChanges();
                 }
-            }
+            
         }
     }
 }

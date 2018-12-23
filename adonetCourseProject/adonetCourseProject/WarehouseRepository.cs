@@ -10,7 +10,7 @@ namespace adonetCourseProject
 {
     class WarehouseRepository : IRepository<Warehouse>
     {
-        private DatabaseContext ctx;
+        private DatabaseContext ctx = new DatabaseContext();
 
         static WarehouseRepository instance = null;
 
@@ -25,55 +25,43 @@ namespace adonetCourseProject
         
         public void Create(Warehouse item)
         {
-            using (ctx = new DatabaseContext())
-            {
-                
+ 
                 ctx.Warehouse.Add(item);
 
                 ctx.Entry(item).State = EntityState.Added;
                 ctx.SaveChanges();
-            }
+            
         }
 
         public void Delete(int id)
         {
-             using (ctx = new DatabaseContext())
-             {
+            
                 Warehouse whToDelete = ctx.Warehouse.ToList().FirstOrDefault(w => w.Id == id);
                 
                 ctx.Warehouse.Remove(whToDelete);
 
                 ctx.Entry(whToDelete).State = EntityState.Deleted;
                 ctx.SaveChanges();
-                
-             }
-
-            
+          
         }
 
         public Warehouse Get(int id)
         {
-            
-            using (ctx = new DatabaseContext())
-            {
+    
                return ctx.Warehouse.ToList().FirstOrDefault(w => w.Id == id);
-            }
-            
+ 
         }
 
         public IEnumerable<Warehouse> GetAll()
         {
-            using (ctx = new DatabaseContext())
-            {
+            
                 return ctx.Warehouse.ToList();
-            }
+            
         }
 
         public void Update(Warehouse item)
         {
-            using (ctx = new DatabaseContext())
-            {
-                Warehouse warehouse = ctx.Warehouse.Find(item.Id);
+                Warehouse warehouse = Get(item.Id);
                 if (warehouse != null)
                 {
                     warehouse.Quantity = item.Quantity;
@@ -85,7 +73,6 @@ namespace adonetCourseProject
                     ctx.Entry(warehouse).State = EntityState.Modified;
                     ctx.SaveChanges();
                 }
-            }
         }
     }
 }

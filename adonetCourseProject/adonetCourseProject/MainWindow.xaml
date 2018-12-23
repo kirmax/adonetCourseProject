@@ -103,7 +103,7 @@
             <local:Shipmentcontrol x:Name="ucShipment"/>
         </StackPanel>-->
 
-        <StackPanel Grid.RowSpan="3">
+        <StackPanel Grid.RowSpan="2">
             <local:Purchasecontrol x:Name="ucPurchase"/>
         </StackPanel>
 

@@ -26,11 +26,11 @@ namespace adonetCourseProject
         {
             InitializeComponent();
 
-            var employees = instance.GetAll();
-            lvEmployee.ItemsSource = employees;
+            
+            lvEmployee.ItemsSource = instance.GetAll();
+
 
             
-
 
         }
 
@@ -39,6 +39,7 @@ namespace adonetCourseProject
 
 
             instance.Update(lvEmployee.SelectedItem as Employee);
+            lvEmployee.ItemsSource = instance.GetAll();
 
         }
 
@@ -61,7 +62,7 @@ namespace adonetCourseProject
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
 
-            instance.Create(new Employee());
+            instance.Create(new Employee { Position = new Position() });
             lvEmployee.ItemsSource = instance.GetAll();
 
         }
@@ -77,9 +78,22 @@ namespace adonetCourseProject
 
         }
 
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            using (DatabaseContext ctx = new DatabaseContext())
+            {
+                var foundEmployees = ctx.Employees.Where(em => em.FirstName.IndexOf(tbSearch.Text) != -1 || em.MiddleName.IndexOf(tbSearch.Text) != -1 || em.LastName.IndexOf(tbSearch.Text) != -1).ToList();
+                lvEmployee.ItemsSource = foundEmployees;
+            }
+        }
 
-       
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbSearch.Text == "")
+                lvEmployee.ItemsSource = instance.GetAll();
+        }
 
-        
+
+
     }
 }

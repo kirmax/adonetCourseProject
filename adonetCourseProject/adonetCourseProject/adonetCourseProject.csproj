@@ -67,6 +67,9 @@
     <Compile Include="Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs" />
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="DBInitializer.cs" />
@@ -95,6 +98,10 @@
     </Compile>
     <Compile Include="WarehouseRepository.cs" />
     <Page Include="Authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangePassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,10 +206,22 @@
     <Resource Include="images\deletebtn.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\Loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\searchbtn_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\addbtn_mouse over.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="images\editbtn.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\Loading.gif" />
+    <Resource Include="images\deletebtn_mouse over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\editbtn_mouse over.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

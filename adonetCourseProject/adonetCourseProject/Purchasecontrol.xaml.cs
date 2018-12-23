@@ -43,6 +43,7 @@ namespace adonetCourseProject
         private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             (sender as TextBox).IsReadOnly = false;
+           
         }
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
@@ -53,7 +54,7 @@ namespace adonetCourseProject
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            instance.Create(new Purchase { DatePurchased = DateTime.Now, DateShiped = DateTime.Now });
+            instance.Create(new Purchase { DatePurchased = DateTime.Now, DateShiped = DateTime.Now, Product = new Product(), Supplier = new Supplier()});
             lvPurchases.ItemsSource = instance.GetAll();
         }
 
@@ -74,8 +75,32 @@ namespace adonetCourseProject
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            instance.Update(lvPurchases.SelectedItem as Purchase);
-            lvPurchases.ItemsSource = instance.GetAll();
+            try
+            {
+                instance.Update(lvPurchases.SelectedItem as Purchase);
+                lvPurchases.ItemsSource = instance.GetAll();
+            }
+            catch (NullReferenceException)
+            {
+
+                MessageBox.Show("Select item to save", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            using (DatabaseContext ctx = new DatabaseContext())
+            {
+                var foundPurchases = ctx.Purchases.Where(fp => fp.Product.Name.IndexOf(tbSearch.Text) != -1).ToList();
+                lvPurchases.ItemsSource = foundPurchases;
+            }
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tbSearch.Text == "")
+                lvPurchases.ItemsSource = instance.GetAll();
         }
     }
     
