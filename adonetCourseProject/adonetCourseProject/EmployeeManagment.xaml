@@ -36,11 +36,11 @@
            
             
 
-            <ListView Grid.Row="1" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0" FontStyle="Italic" >
+            <ListView Grid.Row="1" Loaded="lvEmployee_Loaded" x:Name="lvEmployee" ItemsSource="{Binding Employees}" Margin="50,0,0,0" FontStyle="Italic" >
                 <ListView.View>
                     <GridView>
                     
-                    <GridViewColumn Width="150" Header="Фото" >
+                    <GridViewColumn  Width="150" Header="Фото" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Image  Width="150" Source="{Binding Photo}"/>

@@ -93,7 +93,10 @@ namespace adonetCourseProject
                 lvEmployee.ItemsSource = instance.GetAll();
         }
 
-
-
+        private void lvEmployee_Loaded(object sender, RoutedEventArgs e)
+        {
+           var firstcolumn = ((GridView)lvEmployee.View).Columns[0];
+            
+        }
     }
 }

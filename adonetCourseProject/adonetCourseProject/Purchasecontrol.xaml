@@ -54,8 +54,8 @@
                                     <TreeView BorderThickness="0" Background="Transparent">
 
 
-                                        <TreeViewItem Name="tviProduct" Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbName,Path=Text}">
-
+                                        <TreeViewItem Loaded="tviProduct_Loaded" Name="tviProduct" Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbName,Path=Text}">
+                                            
                                             <StackPanel >
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Название:"/>
@@ -128,33 +128,33 @@
                                     <TreeView BorderThickness="0" Background="Transparent" >
 
 
-                                        <TreeViewItem  Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbCName,Path=Text}" >
+                                        <TreeViewItem  Loaded="tviProduct_Loaded"  Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbCName,Path=Text}" >
 
                                             <StackPanel >
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock  Text="Название:"/>
-                                                    <TextBox Name="tbCName" Text="{Binding Product.CompanyName}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
+                                                    <TextBox Name="tbCName" Text="{Binding Supplier.CompanyName}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Контактное имя:"/>
-                                                    <TextBox Text="{Binding Product.ContactName}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
+                                                    <TextBox Text="{Binding Supplier.ContactName}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Адрес:"/>
-                                                    <TextBox Text="{Binding Product.Address}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
+                                                    <TextBox Text="{Binding Supplier.Address}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Телефон:"/>
-                                                    <TextBox Text="{Binding Product.Phone}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
+                                                    <TextBox Text="{Binding Supplier.Phone}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                                 <StackPanel  Orientation="Horizontal">
                                                     <TextBlock Text="Email:"/>
-                                                    <TextBox Text="{Binding Product.Email}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
+                                                    <TextBox Text="{Binding Supplier.Email}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="Описание:"/>
-                                                    <TextBox Text="{Binding Product.Description}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
+                                                    <TextBox Text="{Binding Supplier.Description}" Style="{StaticResource tbInner}" IsReadOnly="True" MouseDoubleClick="TextBox_MouseDoubleClick" LostFocus="TextBox_LostFocus"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </TreeViewItem>
