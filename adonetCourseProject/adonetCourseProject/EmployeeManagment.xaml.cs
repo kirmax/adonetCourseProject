@@ -29,8 +29,9 @@ namespace adonetCourseProject
             
             lvEmployee.ItemsSource = instance.GetAll();
 
-
             
+            
+
 
         }
 

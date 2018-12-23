@@ -73,8 +73,8 @@ namespace adonetCourseProject
 
                     purchase.Price = item.Price;
                     purchase.Quantity = item.Quantity;
-                    purchase.DatePurchased = Convert.ToDateTime(item.DateP);
-                    purchase.DateShiped = Convert.ToDateTime(item.DateS);
+                    purchase.DatePurchased = item.DatePurchased;
+                    purchase.DateShiped = item.DateShiped;
                     purchase.DeliveryCompany = item.DeliveryCompany;
                    
 
