@@ -98,5 +98,14 @@ namespace adonetCourseProject
            var firstcolumn = ((GridView)lvEmployee.View).Columns[0];
             
         }
+
+        private void Button_Loaded(object sender, RoutedEventArgs e)
+        {
+            var Photo = sender as Button;
+            if (Photo.Content == null)
+            {
+                Photo.Content = @"\images\photobtn.png";
+            }
+        }
     }
 }

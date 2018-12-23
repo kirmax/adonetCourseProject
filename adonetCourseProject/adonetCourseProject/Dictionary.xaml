@@ -316,6 +316,29 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="btnPhoto" TargetType="{x:Type Button}">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+
+                   
+                            <Image x:Name="img" Width="150" Stretch="Fill" >
+                                <Image.Style >
+                                    <Style TargetType="Image">
+                                        <Setter Property="Source" Value="{Binding Content,RelativeSource={RelativeSource TemplatedParent}}"/>
+                                       
+                                    </Style>
+                                </Image.Style>
+
+                            </Image>
+
+                        
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style x:Key="btnedit" TargetType="{x:Type Button}">
 
         <Setter Property="Template">
