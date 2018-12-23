@@ -99,13 +99,13 @@
             <local:Warehousecontrol x:Name="ucWarehouse"  />
         </StackPanel>-->
 
-        <!--<StackPanel Grid.RowSpan="3">
-            <local:Shipmentcontrol x:Name="ucShipment"/>
-        </StackPanel>-->
-
         <StackPanel Grid.RowSpan="2">
-            <local:Purchasecontrol x:Name="ucPurchase"/>
+            <local:Shipmentcontrol x:Name="ucShipment"/>
         </StackPanel>
+
+        <!--<StackPanel Grid.RowSpan="2">
+            <local:Purchasecontrol x:Name="ucPurchase"/>
+        </StackPanel>-->
 
     </Grid>
 

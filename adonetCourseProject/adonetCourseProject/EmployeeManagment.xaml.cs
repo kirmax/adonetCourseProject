@@ -82,7 +82,7 @@ namespace adonetCourseProject
         {
             using (DatabaseContext ctx = new DatabaseContext())
             {
-                var foundEmployees = ctx.Employees.Where(em => em.FirstName.IndexOf(tbSearch.Text) != -1 || em.MiddleName.IndexOf(tbSearch.Text) != -1 || em.LastName.IndexOf(tbSearch.Text) != -1).ToList();
+                var foundEmployees = instance.GetAll().Where(em => em.FirstName.ToLower().Contains(tbSearch.Text.ToLower()) || em.MiddleName.ToLower().Contains(tbSearch.Text.ToLower()) || em.LastName.ToLower().Contains(tbSearch.Text.ToLower())).ToList();
                 lvEmployee.ItemsSource = foundEmployees;
             }
         }

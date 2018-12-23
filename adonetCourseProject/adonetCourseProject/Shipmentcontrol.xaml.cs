@@ -80,11 +80,10 @@ namespace adonetCourseProject
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            using (DatabaseContext ctx = new DatabaseContext())
-            {
-                var foundShipments = ctx.Shipments.Where(fp => fp.Product.Name.IndexOf(tbSearch.Text) != -1).ToList();
+            
+                var foundShipments = instance.GetAll().Where(fp => fp.Product.Name.ToLower().Contains(tbSearch.Text.ToLower())).ToList();
                 lvShipment.ItemsSource = foundShipments;
-            }
+            
         }
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
