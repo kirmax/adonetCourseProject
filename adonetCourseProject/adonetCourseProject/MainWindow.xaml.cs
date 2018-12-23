@@ -60,30 +60,44 @@ namespace adonetCourseProject
             }
         }
 
-        /* private void tvProduct_Expanded(object sender, RoutedEventArgs e)
-         {
+        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var curlbl = sender as Label;
+            if (grid.Children.Count > 1) grid.Children.RemoveAt(1);
+            switch (curlbl.Content)
+            {
+                case "Отдел закупок":
+                    {
+                        Purchasecontrol pc = new Purchasecontrol();
+                        grid.Children.Add(pc);
+                        break;
+                    }
+                case "Отдел кадров":
+                    {
+                        EmployeeManagment em = new EmployeeManagment();
+                        grid.Children.Add(em);
+                        break;
+                    }
+                case "Отдел продаж":
+                    {
+                       Shipmentcontrol sc = new Shipmentcontrol();
+                        grid.Children.Add(sc);
+                        break;
+                    }
+                case "Склад":
+                    {
+                        Warehousecontrol wc = new Warehousecontrol();
+                        grid.Children.Add(wc);
+                        break;
+                    }
 
-             foreach (GridViewColumn c in ((GridView)lvShipment.View).Columns)
-             {
-                 if (double.IsNaN(c.Width))
-                 {
-                     c.Width = c.ActualWidth;
-                 }
-                 c.Width = double.NaN;
-             }
-         }
 
-         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-         {
-             Shipment currentItem = lvShipment.SelectedItem as Shipment;
-             if ((sender as TextBox).Text != String.Empty && currentItem != null)
-             {
-                 currentItem.Price = currentItem.Product.Price * currentItem.Quantity;
-                 (((GridView)lvShipment.View).Columns[1].CellTemplate.LoadContent() as TextBox).Text = currentItem.Price.ToString();
-             }
+                default:
+                    break;
+            }
+        }
 
-         }*/
-    
+
 
 
     }

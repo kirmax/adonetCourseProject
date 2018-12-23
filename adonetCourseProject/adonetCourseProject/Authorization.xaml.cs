@@ -38,7 +38,7 @@ namespace adonetCourseProject
                 return;
             }
 
-
+            btnLogin.IsEnabled = false;
             Title = "Подключение к БД";
 
             ThreadPool.QueueUserWorkItem((args) =>
@@ -79,10 +79,12 @@ namespace adonetCourseProject
           // await Task.Run(new Action(() => ThreadParams(tbLogin.Text, pbPassword.Text)));
         }
 
-        private void lbPswdChange_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void lbPswdChange_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            
             ChangePassword wndChangePswd = new ChangePassword();
             wndChangePswd.Show();
+            this.Close();
         }
     }
 

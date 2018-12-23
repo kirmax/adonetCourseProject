@@ -40,7 +40,7 @@
 
                 <!--<MediaElement MediaEnded="gif_MediaEnded" Width="50" x:Name="gif" UnloadedBehavior="Manual" Source="D:\Программирование\C#\adonetCourseProject\adonetCourseProject\adonetCourseProject\adonetCourseProject\images\Loading.gif" LoadedBehavior="Play" Stretch="Fill"/> -->
 
-                <Label Name="lbPswdChange" Content="сменить пароль" HorizontalAlignment="Right" Foreground="#FFACB5B9" FontStyle="Italic" Style="{StaticResource MenuLabel}" MouseDoubleClick="lbPswdChange_MouseDoubleClick"/>
+                <Label Name="lbPswdChange" Content="сменить пароль" HorizontalAlignment="Right" Foreground="#FFACB5B9" FontStyle="Italic" Style="{StaticResource MenuLabel}"  MouseLeftButtonDown="lbPswdChange_MouseLeftButtonDown"/>
 
 
 

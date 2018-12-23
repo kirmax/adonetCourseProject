@@ -191,8 +191,13 @@
 
 
                         </TextBlock>
-
+                        
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false" >
+                            <Setter TargetName="border" Property="BorderBrush" Value="Red" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -218,7 +223,25 @@
 
                             </Grid>
                         </Border>
+                        <TextBlock IsHitTestVisible="False" 
+                                       Text="{TemplateBinding Tag}"
+                                       FontSize="18">
 
+
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text,RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+
+                            </TextBlock.Style>
+
+
+                        </TextBlock>
 
 
 
