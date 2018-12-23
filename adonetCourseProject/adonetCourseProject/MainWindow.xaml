@@ -23,23 +23,23 @@
 
         <StackPanel Grid.RowSpan="2" Panel.ZIndex="1" HorizontalAlignment="Left" Style="{StaticResource spSlideLeft}"  Width="200" x:Name="spLeft" Background="#FF016E9D" Margin="-150,0,0,0">
             <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Width="140" Content="Отдел закупок" VerticalAlignment="Center" FontFamily="Source Sans Pro" />
+                <Label Name="lblPurchases" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Width="140" Content="Отдел закупок" VerticalAlignment="Center" FontFamily="Source Sans Pro" IsEnabled="False"/>
                 <Image Margin="10 0 0 0" Width="30" Height="30"  Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
             </DockPanel>
 
             <DockPanel   VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Отдел кадров" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro"/>
+                <Label Name="lblEmployees" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Отдел кадров" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" IsEnabled="False"/>
                 <Image Margin="10 0 0 0" Width="30" Height="30" Source="/images/employeement.png" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
             </DockPanel>
             <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Отдел продаж" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro"/>
+                <Label Name="lblShipments" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Отдел продаж" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" IsEnabled="False"/>
                 <Image Margin="10 0 0 0" Width="30" Height="30" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
             </DockPanel>
             <DockPanel  VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
-                <Label MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Склад" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro"/>
+                <Label Name="lblWarehouse" MouseLeftButtonDown="Label_MouseLeftButtonDown" Style="{DynamicResource MenuLabel}" Content="Склад" Width="140" VerticalAlignment="Center" FontFamily="Source Sans Pro" IsEnabled="False"/>
                 <Image Margin="10 0 0 0" Width="30" Height="30" Stretch="UniformToFill" StretchDirection="DownOnly" IsHitTestVisible="False"/>
 
             </DockPanel>
@@ -104,9 +104,9 @@
             <local:Warehousecontrol x:Name="ucWarehouse"  />
         </StackPanel>-->
 
-        <StackPanel Grid.RowSpan="2">
+        <!--<StackPanel Grid.RowSpan="2">
             <local:Shipmentcontrol x:Name="ucShipment"/>
-        </StackPanel>
+        </StackPanel>-->
 
         <!--<StackPanel>
             <local:Purchasecontrol x:Name="ucPurchase"/>

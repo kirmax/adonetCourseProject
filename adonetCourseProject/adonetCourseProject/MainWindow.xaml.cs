@@ -22,21 +22,21 @@ namespace adonetCourseProject
     public partial class MainWindow : Window
     {
 
-        public List<Warehouse> Warehouses { get; set; } = new List<Warehouse>();
+        //public List<Warehouse> Warehouses { get; set; } = new List<Warehouse>();
         public MainWindow(Employee employee)
         {
 
             InitializeComponent();
-            DatabaseContext ctx = new DatabaseContext();
-            //EmployeeRepository instance = EmployeeRepository.GetInstance();
+            // DatabaseContext ctx = new DatabaseContext();
+            EmployeeRepository instance = EmployeeRepository.GetInstance();
             //var employees = instance.GetAll();
-            //EmployeePositionAccess(employees.Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
+            EmployeePositionAccess(instance.GetAll().Where(e => e.Id == employee.Id).FirstOrDefault().Position.Name);
             //Warehouses = ctx.Warehouse.ToList();
 
             // lvShipment.ItemsSource = Warehouses;
 
 
-
+            
 
 
 
@@ -47,13 +47,24 @@ namespace adonetCourseProject
         {
             switch (position)
             {
-                /* case "Admin":
-                     break;*/
+                
                 case "CEO":
+                    lblPurchases.IsEnabled = true;
+                    lblEmployees.IsEnabled = true;
+                    lblShipments.IsEnabled = true;
+                    lblWarehouse.IsEnabled = true;
                     break;
-                case "Secretary":
+                case "ShipmentsDepartment":
+                    lblShipments.IsEnabled = true;
                     break;
                 case "HR":
+                    lblEmployees.IsEnabled = true;
+                    break;
+                case "PurchasesDepartment":
+                    lblPurchases.IsEnabled = true;
+                    break;
+                case "WarehouseWorker":
+                    lblWarehouse.IsEnabled = true;
                     break;
                 default:
                     break;
