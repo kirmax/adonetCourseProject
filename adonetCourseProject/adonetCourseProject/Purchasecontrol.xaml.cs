@@ -91,11 +91,10 @@ namespace adonetCourseProject
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-
-
-            var foundPurchases = instance.GetAll().Where(p => p.Product.Name.ToLower().Contains(tbSearch.Text.ToLower())).ToList();     
-            lvPurchases.ItemsSource = foundPurchases;
-
+            
+                var foundPurchases = instance.GetAll().Where(fp => fp.Product.Name.ToLower().Contains(tbSearch.Text.ToLower())).ToList();
+                lvPurchases.ItemsSource = foundPurchases;
+            
         }
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)

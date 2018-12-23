@@ -35,16 +35,16 @@ namespace adonetCourseProject
 
         public void Delete(int id)
         {
-           
-                Shipment shipmentToDelete = ctx.Shipments.Find(id);
 
-                if (shipmentToDelete != null)
-                {
-                    ctx.Shipments.Remove(shipmentToDelete);
+            Shipment shipmentToDelete = Get(id);
 
-                    ctx.Entry(shipmentToDelete).State = EntityState.Deleted;
-                    ctx.SaveChanges();
-                }
+            if (shipmentToDelete != null)
+            {
+                ctx.Shipments.Remove(shipmentToDelete);
+
+                ctx.Entry(shipmentToDelete).State = EntityState.Deleted;
+                ctx.SaveChanges();
+            }
 
             
         }
@@ -65,8 +65,8 @@ namespace adonetCourseProject
 
         public void Update(Shipment item)
         {
-            
-                Shipment shipment = ctx.Shipments.FirstOrDefault(s => s.Id == item.Id);
+
+                Shipment shipment = Get(item.Id); //ctx.Shipments.FirstOrDefault(s => s.Id == item.Id);
                 if (shipment != null)
                 {
                     shipment.Product = item.Product;

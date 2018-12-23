@@ -82,6 +82,8 @@ namespace adonetCourseProject
                     employee.Reward = item.Reward;
                     employee.Position.Name = item.Position.Name;
 
+                //employee.Account == null ? true : false;
+
                     ctx.Entry(employee).State = EntityState.Modified;
                     ctx.SaveChanges();
                 }
