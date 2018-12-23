@@ -54,7 +54,7 @@
                                     <TreeView BorderThickness="0" Background="Transparent">
 
 
-                                        <TreeViewItem Loaded="tviProduct_Loaded" Name="tviProduct" Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbName,Path=Text}">
+                                        <TreeViewItem Loaded="tvProduct_Expanded" Name="tviProduct" Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbName,Path=Text}">
                                             
                                             <StackPanel >
                                                 <StackPanel  Orientation="Horizontal">
@@ -128,7 +128,7 @@
                                     <TreeView BorderThickness="0" Background="Transparent" >
 
 
-                                        <TreeViewItem  Loaded="tviProduct_Loaded"  Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbCName,Path=Text}" >
+                                        <TreeViewItem  Loaded="tvProduct_Expanded"  Expanded="tvProduct_Expanded" Header="{Binding ElementName=tbCName,Path=Text}" >
 
                                             <StackPanel >
                                                 <StackPanel  Orientation="Horizontal">

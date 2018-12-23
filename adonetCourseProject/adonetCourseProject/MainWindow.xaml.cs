@@ -49,22 +49,32 @@ namespace adonetCourseProject
             {
                 
                 case "CEO":
-                    lblPurchases.IsEnabled = true;
-                    lblEmployees.IsEnabled = true;
-                    lblShipments.IsEnabled = true;
-                    lblWarehouse.IsEnabled = true;
+                    dpPurchases.Visibility = Visibility.Visible;
+                    dpEmployees.Visibility = Visibility.Visible;
+                    dpShipments.Visibility = Visibility.Visible;
+                    dpWarehouse.Visibility = Visibility.Visible;
+                    Purchasecontrol pcceo = new Purchasecontrol();
+                    grid.Children.Add(pcceo);
                     break;
                 case "ShipmentsDepartment":
-                    lblShipments.IsEnabled = true;
+                    dpShipments.Visibility = Visibility.Visible;
+                    Shipmentcontrol sc = new Shipmentcontrol();
+                    grid.Children.Add(sc);
                     break;
                 case "HR":
-                    lblEmployees.IsEnabled = true;
+                    dpEmployees.Visibility = Visibility.Visible;
+                    EmployeeManagment em = new EmployeeManagment();
+                    grid.Children.Add(em);
                     break;
                 case "PurchasesDepartment":
-                    lblPurchases.IsEnabled = true;
+                    dpPurchases.Visibility = Visibility.Visible;
+                    Purchasecontrol pc = new Purchasecontrol();
+                    grid.Children.Add(pc);
                     break;
                 case "WarehouseWorker":
-                    lblWarehouse.IsEnabled = true;
+                    dpWarehouse.Visibility = Visibility.Visible;
+                    Warehousecontrol wc = new Warehousecontrol();
+                    grid.Children.Add(wc);
                     break;
                 default:
                     break;
@@ -101,7 +111,11 @@ namespace adonetCourseProject
                         grid.Children.Add(wc);
                         break;
                     }
-
+                case "Выход":
+                    {
+                        Close();
+                        break;
+                    }
 
                 default:
                     break;

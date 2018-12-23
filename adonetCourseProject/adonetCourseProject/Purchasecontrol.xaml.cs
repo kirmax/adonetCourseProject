@@ -26,7 +26,7 @@ namespace adonetCourseProject
         {
             InitializeComponent();
             lvPurchases.ItemsSource = instance.GetAll();
-         
+
         }
 
         private void tvProduct_Expanded(object sender, RoutedEventArgs e)
@@ -92,28 +92,16 @@ namespace adonetCourseProject
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            
-                var foundPurchases = instance.GetAll().Where(fp => fp.Product.Name.ToLower().Contains(tbSearch.Text.ToLower())).ToList();
-                lvPurchases.ItemsSource = foundPurchases;
-            
+
+            var foundPurchases = instance.GetAll().Where(fp => fp.Product.Name.ToLower().Contains(tbSearch.Text.ToLower())).ToList();
+            lvPurchases.ItemsSource = foundPurchases;
+
         }
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (tbSearch.Text == "")
                 lvPurchases.ItemsSource = instance.GetAll();
-        }
-
-        private void tviProduct_Loaded(object sender, RoutedEventArgs e)
-        {
-            foreach (GridViewColumn c in ((GridView)lvPurchases.View).Columns)
-            {
-                if (double.IsNaN(c.Width))
-                {
-                    c.Width = c.ActualWidth;
-                }
-                c.Width = double.NaN;
-            }
         }
     }
 

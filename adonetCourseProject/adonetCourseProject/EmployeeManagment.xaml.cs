@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -106,6 +107,15 @@ namespace adonetCourseProject
             if (Photo.Content == null)
             {
                 Photo.Content = @"\images\photobtn.png";
+            }
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.ShowDialog();
+            if (lvEmployee.SelectedItem != null)
+            {
+                (lvEmployee.SelectedItem as Employee).Photo = Employee.GetImageBytes(fd.FileName);
             }
         }
     }
